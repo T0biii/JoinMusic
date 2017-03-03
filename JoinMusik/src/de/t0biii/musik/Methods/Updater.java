@@ -4,7 +4,7 @@
 * This class provides the means to safely and easily update a plugin, or check to see if it is updated using dev.bukkit.org
 */
 
-package de.itztobi.musik.Methods;
+package de.t0biii.musik.Methods;
 
 import java.io.*;
 import java.net.MalformedURLException;

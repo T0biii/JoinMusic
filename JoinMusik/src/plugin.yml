@@ -1,11 +1,10 @@
 name: JoinMusik
-author: Tobiasthebest
-authors: [itzTobi_, TobiasTheBest]
+author: T0biii
 depend: [NoteBlockAPI]
-version: 1.8
+version: 2.0
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 
-main: de.itztobi.musik.Main
+main: de.t0biii.musik.JoinMusic
 database: false
 commands:
   JoinMusik:

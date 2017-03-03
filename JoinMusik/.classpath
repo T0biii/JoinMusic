@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Plugins/NoteBlockAPI-1.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Craftbukkit daten von 1.8 und höher/spigot-1.8.3-R0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Plugins/NoteBlockAPI-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Craftbukkit daten von 1.8 und höher/spigot-1.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
