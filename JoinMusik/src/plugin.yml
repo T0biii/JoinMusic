@@ -2,7 +2,7 @@ name: JoinMusik
 author: Tobiasthebest
 authors: [itzTobi_, TobiasTheBest]
 depend: [NoteBlockAPI]
-version: 1.7
+version: 1.8
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 
 main: de.itztobi.musik.Main

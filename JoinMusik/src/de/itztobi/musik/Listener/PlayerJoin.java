@@ -20,7 +20,7 @@ public class PlayerJoin implements Listener{
 	  public PlayerJoin(Main plugin){
 		  this.plugin = plugin;
 	  }
-	  
+	   
 	 public ArrayList<String> player = new ArrayList<String>();
 	 private int a;
 	   

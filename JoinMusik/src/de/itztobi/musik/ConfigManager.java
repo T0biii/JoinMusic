@@ -7,7 +7,7 @@ public class ConfigManager {
 	  {
 		  this.plugin = plugin; 
 	  }	
-
+ 
 	public void loadConfig() {
 	
 		

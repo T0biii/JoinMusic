@@ -23,7 +23,7 @@ public class Main extends JavaPlugin{
 	public static String version = "";
 	public static String link = "";
 	public static String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusik/";
-	
+	 
    public ConfigManager cm = new ConfigManager(this);
    Logger log = Bukkit.getLogger();
    public String cprefix = "[JoinMusik] ";

@@ -13,7 +13,7 @@ public class PlayMusic implements CommandExecutor{
 	  public PlayMusic(Main plugin){
 		  this.plugin = plugin;
 	  }
-	
+	 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(sender instanceof Player){
