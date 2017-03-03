@@ -37,7 +37,7 @@ import org.json.simple.JSONValue;
 * @author Gravity
 * @version 2.1
 */
-
+ 
 public class Updater {
 
     private Plugin plugin;
