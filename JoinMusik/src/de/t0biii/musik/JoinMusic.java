@@ -29,7 +29,7 @@ public class JoinMusic extends JavaPlugin{
     Logger log = Bukkit.getLogger();
     PluginManager pm = Bukkit.getPluginManager();
     public String cprefix = "[JoinMusik] ";
-    public String prefix = "§7[§bJoinMusik§7]§r ";
+    public String prefix = "Â§7[Â§bJoinMusikÂ§7]Â§r ";
 
 	@Override
 	public void onEnable() {

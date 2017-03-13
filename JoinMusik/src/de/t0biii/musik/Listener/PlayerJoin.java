@@ -38,7 +38,7 @@ public class PlayerJoin implements Listener{
 				//sp.setAutoDestroy(true);
 				sp.addPlayer(p);
 				sp.setPlaying(true);
-				p.sendMessage(this.plugin.prefix+ "ง2Start Playing the Song:ง1 "+ sp.getSong().getTitle());
+				p.sendMessage(this.plugin.prefix+ "ยง2Start Playing the Song:ยง1 "+ sp.getSong().getTitle());
 			}
 				
 			if(this.plugin.getConfig().getBoolean("options.limit.on")){

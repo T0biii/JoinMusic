@@ -21,21 +21,21 @@ public class PlayMusic implements CommandExecutor{
 //            		if(p.hasPermission("JoinMusik.update")){
 //            			this.plugin.froce();
 //            		}else{
-//            			p.sendMessage(this.plugin.prefix+"§7"+this.plugin.getConfig().getString("messages.no-permission"));
+//            			p.sendMessage(this.plugin.prefix+"Â§7"+this.plugin.getConfig().getString("messages.no-permission"));
 //            		}
 //            	}
             	if(args[0].equalsIgnoreCase("reload")){
             		try{
             			this.plugin.reloadConfig();
-            			p.sendMessage("§3"+this.plugin.getConfig().getString("messages.reload"));
+            			p.sendMessage("Â§3"+this.plugin.getConfig().getString("messages.reload"));
             		}catch(Exception e){
-            			p.sendMessage("§cReload failed!");
+            			p.sendMessage("Â§cReload failed!");
             		}	
             	}
             }else{
-            	p.sendMessage("§7======= §aJoinMusik §7=======");
-                p.sendMessage("§7/jm §areload  §7| §aConfig Reload!");
-                p.sendMessage("§7======= §aJoinMusik §7=======");
+            	p.sendMessage("Â§7======= Â§aJoinMusik Â§7=======");
+                p.sendMessage("Â§7/jm Â§areload  Â§7| Â§aConfig Reload!");
+                p.sendMessage("Â§7======= Â§aJoinMusik Â§7=======");
             }
 		}else{ sender.sendMessage(this.plugin.cprefix+"use your PC!"); }
 		return false;
