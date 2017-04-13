@@ -2,6 +2,7 @@ package de.t0biii.musik.Listener;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,6 +23,8 @@ public class PlayerJoin implements Listener{
 	private JoinMusic plugin;
 	public PlayerJoin(JoinMusic plugin){ this.plugin = plugin;}
 	public ArrayList<String> player = new ArrayList<String>();
+	private HashMap<String, Long> player2 = new HashMap<>();
+	public short songduration;
 	private int time;
 	
 	
@@ -31,15 +34,25 @@ public class PlayerJoin implements Listener{
 		time = this.plugin.getConfig().getInt("options.limit.time");			
 		Song s = NBSDecoder.parse(new File( plugin.getDataFolder()+"/" + plugin.getConfig().getString("musik")));  
 		final SongPlayer sp = new RadioSongPlayer(s);
+		songduration = sp.getSong().getLength();
 		if(p.hasPermission("JoinMusik.use") || p.isOp() ){				
-				
-			if(!player.contains(p.getName())){
-				player.add(p.getName());
-				//sp.setAutoDestroy(true);
+			p.sendMessage(songduration + " | " + System.currentTimeMillis());	
+			if(!player2.containsKey(p.getUniqueId().toString())){
+				player2.put(p.getUniqueId().toString(), System.currentTimeMillis());
 				sp.addPlayer(p);
 				sp.setPlaying(true);
 				p.sendMessage(this.plugin.prefix+ "§2Start Playing the Song:§1 "+ sp.getSong().getTitle());
+			}else{
+				
 			}
+			
+//			if(!player.contains(p.getName())){
+//				player.add(p.getName());
+//				//sp.setAutoDestroy(true);
+//				sp.addPlayer(p);
+//				sp.setPlaying(true);
+//				p.sendMessage(this.plugin.prefix+ "§2Start Playing the Song:§1 "+ sp.getSong().getTitle());
+//			}
 				
 			if(this.plugin.getConfig().getBoolean("options.limit.on")){
 				Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable(){
