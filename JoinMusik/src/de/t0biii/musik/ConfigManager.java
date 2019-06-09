@@ -10,8 +10,6 @@ public class ConfigManager {
 	   	 this.plugin.getConfig().addDefault("musik", "Song.nbs");
 	     this.plugin.getConfig().addDefault("options.update-check", true); 	
 	     this.plugin.getConfig().addDefault("options.updateinfo", true);
-	     this.plugin.getConfig().addDefault("options.limit.on", false);
-	     this.plugin.getConfig().addDefault("options.limit.time", 30);
 	     this.plugin.getConfig().addDefault("messages.reload", "Reload Erfolgreich!");
 	     this.plugin.getConfig().addDefault("messages.no-permission", "You don't have enough permissions"); 
 	   	 	   	 

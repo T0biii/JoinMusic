@@ -17,13 +17,6 @@ public class PlayMusic implements CommandExecutor{
 		if(sender instanceof Player){
 			Player p = (Player) sender;
             if(args.length == 1){
-//            	if(args[0].equalsIgnoreCase("update")){
-//            		if(p.hasPermission("JoinMusik.update")){
-//            			this.plugin.froce();
-//            		}else{
-//            			p.sendMessage(this.plugin.prefix+"§7"+this.plugin.getConfig().getString("messages.no-permission"));
-//            		}
-//            	}
             	if(args[0].equalsIgnoreCase("reload")){
             		try{
             			this.plugin.reloadConfig();
