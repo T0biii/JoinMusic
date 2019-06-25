@@ -11,8 +11,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Plugins/NoteBlockAPI-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Tobias/Desktop/Server Sachen/Craftbukkit daten von 1.8 und höher/spigot-1.11.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tobia/Desktop/Server Sachen/Plugins/NoteBlockAPI-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tobia/Desktop/Server Sachen/Craftbukkit daten von 1.8 und höher/spigot-1.11.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
