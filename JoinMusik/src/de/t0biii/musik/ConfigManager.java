@@ -12,6 +12,7 @@ public class ConfigManager {
 	     this.plugin.getConfig().addDefault("options.updateinfo", true);
 	     this.plugin.getConfig().addDefault("messages.reload", "Reload Erfolgreich!");
 	     this.plugin.getConfig().addDefault("messages.no-permission", "You don't have enough permissions"); 
+	     this.plugin.getConfig().addDefault("options.metrics", true);
 	   	 	   	 
 	   	 this.plugin.getConfig().options().copyDefaults(true);	
 	}

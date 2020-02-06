@@ -1,6 +1,7 @@
 package de.t0biii.musik;
 
 import java.util.logging.Logger;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -43,6 +44,10 @@ public class JoinMusic extends JavaPlugin {
     cm.loadConfig();
     saveConfig();
     Updater();
+    
+    if(this.getConfig().getBoolean("options.metrics")) {
+      new Metrics(this, 6447);
+    }
     
     pm.registerEvents(new PlayerJoin(this), this);
     this.getCommand("JoinMusik").setExecutor(new PlayMusic(this));
