@@ -30,7 +30,7 @@ public class CMD_PlayMusic implements CommandExecutor {
               player.sendMessage(
                   ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.reload"));
             } catch (Exception exception) {
-              player.sendMessage(ChatColor.RED + "Reload failed!");
+              player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
             }
           } else
             sendInstructions(player);

@@ -47,7 +47,7 @@ public class HANDLER_PlayerJoin implements Listener {
         }
       }
     } catch (IllegalArgumentException e) {
-      System.err.println("No sounds detected");
+      System.err.println(plugin.cprefix + "No sounds detected");
     }
     if (this.plugin.update) {
       if ((player.isOp() || player.hasPermission("JoinMusic.update"))
