@@ -29,7 +29,8 @@ public class HANDLER_PlayerJoin implements Listener {
     final Player player = event.getPlayer();
 
     try {
-      Song s = NBSDecoder.parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
+      Song s = NBSDecoder
+          .parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
       final SongPlayer sp = new RadioSongPlayer(s);
 
       int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
@@ -45,19 +46,21 @@ public class HANDLER_PlayerJoin implements Listener {
           }
         }
       }
-      if (this.plugin.update) {
-        if ((player.isOp() || player.hasPermission("JoinMusic.update"))
-                && plugin.getConfig().getBoolean("options.updateinfo")) {
-          if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
-            //&8An update is avaliable: &e&lJoinMusic v1.7&8, a &6&l RELEASE &8for &61.8
-            player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
-                    + this.plugin.type + " §8for §6" + this.plugin.version);
-          player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
-        }
-      }
     } catch (IllegalArgumentException e) {
       System.err.println("No sounds detected");
     }
+    if (this.plugin.update) {
+      if ((player.isOp() || player.hasPermission("JoinMusic.update"))
+          && plugin.getConfig().getBoolean("options.updateinfo")) {
+        if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
+          // &8An update is avaliable: &e&lJoinMusic v1.7&8, a &6&l RELEASE &8for &61.8
+          player
+              .sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name
+                  + "§8, a §6§l" + this.plugin.type + " §8for §6" + this.plugin.version);
+        player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
+      }
+    }
+
   }
 
   private void playSong(SongPlayer sp, Player p, long songlengthmilli) {

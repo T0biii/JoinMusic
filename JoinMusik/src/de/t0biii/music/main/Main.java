@@ -41,19 +41,19 @@ public class Main extends JavaPlugin {
       log.info(cprefix + "Disabled");
       return;
     }
-    
+
     cm.loadConfig();
     saveConfig();
     Updater();
-    
-    if(this.getConfig().getBoolean("options.metrics")) {
+
+    if (this.getConfig().getBoolean("options.metrics")) {
       new Metrics(this, 6447);
     }
-    
+
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
     getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
-    
+
     log.info(cprefix + "Enabled");
   }
 
@@ -62,7 +62,7 @@ public class Main extends JavaPlugin {
       // Start Updater but just do a version check
       updater = new Updater(this, uid, this.getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
       // Determine if there is an update ready for us
-      update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE; 
+      update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
       name = updater.getLatestName(); // Get the latest name
       version = updater.getLatestGameVersion(); // Get the latest game version
       type = updater.getLatestType(); // Get the latest file's type
