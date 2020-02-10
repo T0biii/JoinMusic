@@ -54,10 +54,10 @@
 		</repository>
 	</repositories>
 
-	<!-- Builds JoinMusik -->
+	<!-- Builds JoinMusic -->
 	<build>
 		<defaultGoal>clean package</defaultGoal>
-		<finalName>JoinMusik</finalName>
+		<finalName>JoinMusic</finalName>
 		<sourceDirectory>${basedir}/src</sourceDirectory>
 		<resources>
 			<resource>
