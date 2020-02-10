@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JoinMusik" />
+        <module name="JoinMusic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JoinMusik" target="1.8" />
+      <module name="JoinMusic" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
