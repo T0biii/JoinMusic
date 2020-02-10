@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="http://buildserver" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+    <option name="showStatusBarWidget" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ef41651-5b5a-4ccc-ace4-65a551757618" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/JoinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/JoinMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Listener/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Listener/PlayerJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Methods/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Methods/Updater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/commands/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/commands/PlayMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusik/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/plugin.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XcIiAdYexTC9qDIFmYtnPfhHS7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinMusik" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive\Development\Bukkit\Workspace\JoinMusik" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="[build]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="build" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinMusik" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef41651-5b5a-4ccc-ace4-65a551757618" name="Default Changelist" comment="" />
+      <created>1581339080815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581339080815</updated>
+      <workItem from="1581339085459" duration="135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581339180123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339180123" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1581339118276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339118276" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1581339175475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339175475" />
+    <state width="1408" height="282" key="GridCell.Tab.0.bottom" timestamp="1581339219872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1408" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339219872" />
+    <state width="1408" height="282" key="GridCell.Tab.0.center" timestamp="1581339219871">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1408" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339219871" />
+    <state width="1408" height="282" key="GridCell.Tab.0.left" timestamp="1581339219871">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1408" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339219871" />
+    <state width="1408" height="282" key="GridCell.Tab.0.right" timestamp="1581339219872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1408" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581339219872" />
+  </component>
+</project>
