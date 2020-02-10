@@ -25,34 +25,33 @@ public class HANDLER_PlayerJoin implements Listener {
   private HashMap<String, Long> playing = new HashMap<>();
 
   @EventHandler
-  public void onJoin(PlayerJoinEvent e) {
-    final Player p = e.getPlayer();
+  public void onPlayerJoin(PlayerJoinEvent event) {
+    final Player player = event.getPlayer();
 
-    Song s = NBSDecoder
-        .parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
+    Song s = NBSDecoder.parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
     final SongPlayer sp = new RadioSongPlayer(s);
 
     int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
     int songLengthInMillisec = songLengthInSec * 1000;
 
-    if (p.hasPermission("JoinMusik.use") || p.isOp()) {
-      if (!playing.containsKey(p.getUniqueId().toString())) {
-        playSong(sp, p, songLengthInMillisec);
+    if (player.hasPermission("JoinMusik.use") || player.isOp()) {
+      if (!playing.containsKey(player.getUniqueId().toString())) {
+        playSong(sp, player, songLengthInMillisec);
       } else {
-        if (playing.get(p.getUniqueId().toString()) <= System.currentTimeMillis()) {
-          playing.remove(p.getUniqueId().toString());
-          playSong(sp, p, songLengthInMillisec);
+        if (playing.get(player.getUniqueId().toString()) <= System.currentTimeMillis()) {
+          playing.remove(player.getUniqueId().toString());
+          playSong(sp, player, songLengthInMillisec);
         }
       }
     }
     if (this.plugin.update) {
-      if ((p.isOp() || p.hasPermission("JoinMusik.update"))
+      if ((player.isOp() || player.hasPermission("JoinMusik.update"))
           && plugin.getConfig().getBoolean("options.updateinfo")) {
         if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
           //&8An update is avaliable: &e&lJoinMusik v1.7&8, a &6&l RELEASE &8for &61.8
-          p.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
+          player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
               + this.plugin.type + " §8for §6" + this.plugin.version);
-        p.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
+        player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
       }
     }
   }
