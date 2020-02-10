@@ -12,3 +12,4 @@ commands:
   JoinMusik:
     description: /PlayMusik
     aliases: [jm, joinmusic]
+    permission: JoinMusik.command.reload
