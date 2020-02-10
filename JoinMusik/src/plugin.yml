@@ -1,4 +1,4 @@
-name: JoinMusik
+name: JoinMusic
 authors:
   - T0biii
   - Fruxz
@@ -6,11 +6,11 @@ depend: [NoteBlockAPI]
 version: '2.2'
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 
-main: de.t0biii.musik.main.Main
+main: de.t0biii.music.main.Main
 database: false
 commands:
   JoinMusic:
-    description: /PlayMusik
+    description: /JoinMusic
     usage: /<command> [reload]
-    aliases: [jm, joinmusic]
+    aliases: [jm, joinmusic, joinmusik]
     permission: JoinMusik.command.reload

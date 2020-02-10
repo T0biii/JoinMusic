@@ -1,4 +1,4 @@
-package de.t0biii.musik.domain;
+package de.t0biii.music.domain;
 
 import java.io.*;
 import java.net.MalformedURLException;

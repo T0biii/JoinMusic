@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.t0biii</groupId>
-	<artifactId>JoinMusik</artifactId>
+	<artifactId>JoinMusic</artifactId>
 	<version>2.2</version>
 	<packaging>jar</packaging>
-	<name>JoinMusik</name>
+	<name>JoinMusic</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -79,7 +79,7 @@
 					<relocations>
 						<relocation>
 							<pattern>org.bstats</pattern>
-							<shadedPattern>de.t0biii.musik</shadedPattern>
+							<shadedPattern>de.t0biii.music</shadedPattern>
 						</relocation>
 					</relocations>
 				</configuration>

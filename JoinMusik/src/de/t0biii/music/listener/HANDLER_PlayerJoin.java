@@ -1,4 +1,4 @@
-package de.t0biii.musik.listener;
+package de.t0biii.music.listener;
 
 import java.io.File;
 import java.util.HashMap;
@@ -10,8 +10,8 @@ import com.xxmicloxx.NoteBlockAPI.model.Song;
 import com.xxmicloxx.NoteBlockAPI.songplayer.RadioSongPlayer;
 import com.xxmicloxx.NoteBlockAPI.songplayer.SongPlayer;
 import com.xxmicloxx.NoteBlockAPI.utils.NBSDecoder;
-import de.t0biii.musik.main.Main;
-import de.t0biii.musik.domain.Updater;
+import de.t0biii.music.domain.Updater;
+import de.t0biii.music.main.Main;
 
 public class HANDLER_PlayerJoin implements Listener {
 
@@ -46,10 +46,10 @@ public class HANDLER_PlayerJoin implements Listener {
         }
       }
       if (this.plugin.update) {
-        if ((player.isOp() || player.hasPermission("JoinMusik.update"))
+        if ((player.isOp() || player.hasPermission("JoinMusic.update"))
                 && plugin.getConfig().getBoolean("options.updateinfo")) {
           if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
-            //&8An update is avaliable: &e&lJoinMusik v1.7&8, a &6&l RELEASE &8for &61.8
+            //&8An update is avaliable: &e&lJoinMusic v1.7&8, a &6&l RELEASE &8for &61.8
             player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
                     + this.plugin.type + " §8for §6" + this.plugin.version);
           player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);

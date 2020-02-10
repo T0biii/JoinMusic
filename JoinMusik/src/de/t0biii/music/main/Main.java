@@ -1,16 +1,15 @@
-package de.t0biii.musik.main;
+package de.t0biii.music.main;
 
 import java.util.logging.Logger;
-
-import de.t0biii.musik.domain.ConfigManager;
+import de.t0biii.music.commands.CMD_PlayMusic;
+import de.t0biii.music.domain.ConfigManager;
+import de.t0biii.music.domain.Updater;
+import de.t0biii.music.domain.Updater.ReleaseType;
+import de.t0biii.music.listener.HANDLER_PlayerJoin;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;
-import de.t0biii.musik.listener.HANDLER_PlayerJoin;
-import de.t0biii.musik.domain.Updater;
-import de.t0biii.musik.domain.Updater.ReleaseType;
-import de.t0biii.musik.commands.CMD_PlayMusic;;
+import org.bukkit.plugin.java.JavaPlugin;;
 
 
 public class Main extends JavaPlugin {
@@ -21,7 +20,7 @@ public class Main extends JavaPlugin {
   public Main instance;
   public String version = "";
   public String link = "";
-  public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusik/";
+  public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
   private int uid = 83541;
   public Updater updater;
 
@@ -29,8 +28,8 @@ public class Main extends JavaPlugin {
   public ConfigManager cm = new ConfigManager(this);
   Logger log = Bukkit.getLogger();
   PluginManager pm = Bukkit.getPluginManager();
-  public String cprefix = "[JoinMusik] ";
-  public String prefix = "§7[§bJoinMusik§7]§r ";
+  public String cprefix = "[JoinMusic] ";
+  public String prefix = "§7[§bJoinMusic§7]§r ";
 
   @Override
   public void onEnable() {

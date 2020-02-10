@@ -1,4 +1,4 @@
-package de.t0biii.musik.commands;
+package de.t0biii.music.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -6,9 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-
-import de.t0biii.musik.main.Main;
-
+import de.t0biii.music.main.Main;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class CMD_PlayMusic implements CommandExecutor{
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(sender.hasPermission("JoinMusik.command.reload")) {
+		if(sender.hasPermission("JoinMusic.command.reload")) {
 			if (sender instanceof Player) {
 				Player player = ((Player) sender).getPlayer();
 				if (args.length == 1) {
@@ -43,9 +41,9 @@ public class CMD_PlayMusic implements CommandExecutor{
 	}
 
 	private void sendInstructions(CommandSender sender) {
-		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
+		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusic " + ChatColor.GRAY + "=======");
 		sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| " + ChatColor.GREEN + "Config Reload!");
-		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
+		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusic " + ChatColor.GRAY + "=======");
 	}
 
 	public static TabCompleter tabCompleter = new TabCompleter() {

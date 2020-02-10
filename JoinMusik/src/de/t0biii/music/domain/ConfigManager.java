@@ -1,6 +1,6 @@
-package de.t0biii.musik.domain;
+package de.t0biii.music.domain;
 
-import de.t0biii.musik.main.Main;
+import de.t0biii.music.main.Main;
 
 public class ConfigManager {
 	
