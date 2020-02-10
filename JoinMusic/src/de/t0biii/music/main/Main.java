@@ -68,8 +68,8 @@ public class Main extends JavaPlugin {
       type = updater.getLatestType(); // Get the latest file's type
       link = updater.getLatestFileLink(); // Get the latest link
       if (update) {
-        log.info(prefix + "New version available! " + name);
-        log.info(prefix + "Download at: " + link2);
+        log.info(cprefix + "New version available! " + name);
+        log.info(cprefix + "Download at: " + link2);
       }
     }
   }
