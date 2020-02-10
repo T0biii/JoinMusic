@@ -1,11 +1,14 @@
 package de.t0biii.musik.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.t0biii.musik.main.Main;
+
+import java.util.ArrayList;
 
 public class CMD_PlayMusic implements CommandExecutor{
 
@@ -14,23 +17,23 @@ public class CMD_PlayMusic implements CommandExecutor{
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(sender instanceof Player){
-			Player p = (Player) sender;
-            if(args.length == 1){
-            	if(args[0].equalsIgnoreCase("reload")){
-            		try{
+		if (sender instanceof Player) {
+			Player player = ((Player) sender).getPlayer();
+            if(args.length == 1) {
+            	if(args[0].equalsIgnoreCase("reload")) {
+            		try {
             			this.plugin.reloadConfig();
-            			p.sendMessage("§3"+this.plugin.getConfig().getString("messages.reload"));
-            		}catch(Exception e){
-            			p.sendMessage("§cReload failed!");
+            			player.sendMessage(ChatColor.DARK_AQUA + this.plugin.getConfig().getString("messages.reload"));
+            		} catch (Exception exception) {
+            			player.sendMessage(ChatColor.RED + "Reload failed!");
             		}	
             	}
-            }else{
-            	p.sendMessage("§7======= §aJoinMusik §7=======");
-                p.sendMessage("§7/jm §areload  §7| §aConfig Reload!");
-                p.sendMessage("§7======= §aJoinMusik §7=======");
-            }
-		}else{ sender.sendMessage(this.plugin.cprefix+"use your PC!"); }
-		return false;
+            } else {
+            	player.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
+                player.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| " + ChatColor.GREEN + "Config Reload!");
+				player.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");            }
+		} else
+			sender.sendMessage(this.plugin.prefix + "This command is not for console!");
+		return true;
 	}
 }
