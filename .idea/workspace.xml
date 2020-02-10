@@ -25,12 +25,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ef41651-5b5a-4ccc-ace4-65a551757618" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/JoinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/JoinMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Listener/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Listener/PlayerJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Methods/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/Methods/Updater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/commands/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/de/t0biii/musik/commands/PlayMusic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinMusik/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusik/src/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/music/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/Music/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/music/JoinMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/Music/JoinMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/music/Listener/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/Music/Listener/PlayerJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/music/Methods/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/Music/Methods/Updater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/music/commands/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/de/t0biii/Music/commands/PlayMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinMusic/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/JoinMusic/src/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +50,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinMusik" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JoinMusic" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OneDrive\Development\Bukkit\Workspace\JoinMusik" />
+      <recent name="D:\OneDrive\Development\Bukkit\Workspace\JoinMusic" />
     </key>
   </component>
   <component name="RunManager">
@@ -77,7 +77,7 @@
               <map />
             </option>
             <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/JoinMusik" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/JoinMusic" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
