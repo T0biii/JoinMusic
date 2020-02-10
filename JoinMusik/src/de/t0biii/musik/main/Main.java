@@ -1,22 +1,24 @@
-package de.t0biii.musik;
+package de.t0biii.musik.main;
 
 import java.util.logging.Logger;
+
+import de.t0biii.musik.domain.ConfigManager;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import de.t0biii.musik.Listener.PlayerJoin;
-import de.t0biii.musik.Methods.Updater;
-import de.t0biii.musik.Methods.Updater.ReleaseType;
-import de.t0biii.musik.commands.PlayMusic;;
+import de.t0biii.musik.listener.HANDLER_PlayerJoin;
+import de.t0biii.musik.domain.Updater;
+import de.t0biii.musik.domain.Updater.ReleaseType;
+import de.t0biii.musik.commands.CMD_PlayMusic;;
 
 
-public class JoinMusic extends JavaPlugin {
+public class Main extends JavaPlugin {
 
   public boolean update = false;
   public String name = "";
   public ReleaseType type = null;
-  public JoinMusic instance;
+  public Main instance;
   public String version = "";
   public String link = "";
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusik/";
@@ -49,8 +51,8 @@ public class JoinMusic extends JavaPlugin {
       new Metrics(this, 6447);
     }
     
-    pm.registerEvents(new PlayerJoin(this), this);
-    this.getCommand("JoinMusik").setExecutor(new PlayMusic(this));
+    pm.registerEvents(new HANDLER_PlayerJoin(this), this);
+    this.getCommand("JoinMusik").setExecutor(new CMD_PlayMusic(this));
     
     log.info(cprefix + "Enabled");
   }
@@ -58,7 +60,7 @@ public class JoinMusic extends JavaPlugin {
   public void Updater() {
     if (this.getConfig().getBoolean("options.update-check")) {
       // Start Updater but just do a version check
-      updater = new Updater(this, uid, this.getFile(), Updater.UpdateType.NO_DOWNLOAD, false); 
+      updater = new Updater(this, uid, this.getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
       // Determine if there is an update ready for us
       update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE; 
       name = updater.getLatestName(); // Get the latest name

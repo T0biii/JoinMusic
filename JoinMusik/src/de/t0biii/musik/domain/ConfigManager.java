@@ -1,4 +1,4 @@
-package de.t0biii.musik;
+package de.t0biii.musik.domain;
 
 import de.t0biii.musik.main.Main;
 
