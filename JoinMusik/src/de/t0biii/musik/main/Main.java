@@ -52,7 +52,8 @@ public class Main extends JavaPlugin {
     }
     
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
-    this.getCommand("JoinMusik").setExecutor(new CMD_PlayMusic(this));
+    getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
+    getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
     
     log.info(cprefix + "Enabled");
   }

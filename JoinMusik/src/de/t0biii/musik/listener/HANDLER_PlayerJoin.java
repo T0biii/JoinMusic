@@ -28,31 +28,35 @@ public class HANDLER_PlayerJoin implements Listener {
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
 
-    Song s = NBSDecoder.parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
-    final SongPlayer sp = new RadioSongPlayer(s);
+    try {
+      Song s = NBSDecoder.parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
+      final SongPlayer sp = new RadioSongPlayer(s);
 
-    int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
-    int songLengthInMillisec = songLengthInSec * 1000;
+      int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
+      int songLengthInMillisec = songLengthInSec * 1000;
 
-    if (player.hasPermission("JoinMusik.use") || player.isOp()) {
-      if (!playing.containsKey(player.getUniqueId().toString())) {
-        playSong(sp, player, songLengthInMillisec);
-      } else {
-        if (playing.get(player.getUniqueId().toString()) <= System.currentTimeMillis()) {
-          playing.remove(player.getUniqueId().toString());
+      if (player.hasPermission("JoinMusik.use") || player.isOp()) {
+        if (!playing.containsKey(player.getUniqueId().toString())) {
           playSong(sp, player, songLengthInMillisec);
+        } else {
+          if (playing.get(player.getUniqueId().toString()) <= System.currentTimeMillis()) {
+            playing.remove(player.getUniqueId().toString());
+            playSong(sp, player, songLengthInMillisec);
+          }
         }
       }
-    }
-    if (this.plugin.update) {
-      if ((player.isOp() || player.hasPermission("JoinMusik.update"))
-          && plugin.getConfig().getBoolean("options.updateinfo")) {
-        if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
-          //&8An update is avaliable: &e&lJoinMusik v1.7&8, a &6&l RELEASE &8for &61.8
-          player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
-              + this.plugin.type + " §8for §6" + this.plugin.version);
-        player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
+      if (this.plugin.update) {
+        if ((player.isOp() || player.hasPermission("JoinMusik.update"))
+                && plugin.getConfig().getBoolean("options.updateinfo")) {
+          if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
+            //&8An update is avaliable: &e&lJoinMusik v1.7&8, a &6&l RELEASE &8for &61.8
+            player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
+                    + this.plugin.type + " §8for §6" + this.plugin.version);
+          player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
+        }
       }
+    } catch (IllegalArgumentException e) {
+      System.err.println("No sounds detected");
     }
   }
 

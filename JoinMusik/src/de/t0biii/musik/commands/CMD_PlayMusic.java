@@ -4,11 +4,14 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import de.t0biii.musik.main.Main;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CMD_PlayMusic implements CommandExecutor{
 
@@ -28,12 +31,10 @@ public class CMD_PlayMusic implements CommandExecutor{
 						} catch (Exception exception) {
 							player.sendMessage(ChatColor.RED + "Reload failed!");
 						}
-					}
-				} else {
-					player.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
-					player.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| " + ChatColor.GREEN + "Config Reload!");
-					player.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
-				}
+					} else
+						sendInstructions(player);
+				} else
+					sendInstructions(player);
 			} else
 				sender.sendMessage(plugin.prefix + "This command is not for console!");
 		} else {
@@ -41,4 +42,20 @@ public class CMD_PlayMusic implements CommandExecutor{
 		}
 		return true;
 	}
+
+	private void sendInstructions(CommandSender sender) {
+		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
+		sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| " + ChatColor.GREEN + "Config Reload!");
+		sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + "JoinMusik " + ChatColor.GRAY + "=======");
+	}
+
+	public static TabCompleter tabCompleter = new TabCompleter() {
+		@Override
+		public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+			if(strings.length == 1) {
+				return Collections.singletonList("reload");
+			}
+			return Collections.singletonList(" ");
+		}
+	};
 }

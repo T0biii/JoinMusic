@@ -9,7 +9,8 @@ website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 main: de.t0biii.musik.main.Main
 database: false
 commands:
-  JoinMusik:
+  JoinMusic:
     description: /PlayMusik
+    usage: /<command> [reload]
     aliases: [jm, joinmusic]
     permission: JoinMusik.command.reload
