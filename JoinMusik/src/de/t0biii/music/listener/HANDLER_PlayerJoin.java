@@ -30,13 +30,13 @@ public class HANDLER_PlayerJoin implements Listener {
 
     try {
       Song s = NBSDecoder
-          .parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("musik")));
+          .parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music")));
       final SongPlayer sp = new RadioSongPlayer(s);
 
       int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
       int songLengthInMillisec = songLengthInSec * 1000;
 
-      if (player.hasPermission("JoinMusik.use") || player.isOp()) {
+      if (player.hasPermission("JoinMusic.use") || player.isOp()) {
         if (!playing.containsKey(player.getUniqueId().toString())) {
           playSong(sp, player, songLengthInMillisec);
         } else {
