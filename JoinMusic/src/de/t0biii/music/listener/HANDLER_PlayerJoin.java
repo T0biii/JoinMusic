@@ -67,7 +67,9 @@ public class HANDLER_PlayerJoin implements Listener {
     playing.put(p.getUniqueId().toString(), (System.currentTimeMillis() + songlengthmilli));
     sp.addPlayer(p);
     sp.setPlaying(true);
-    p.sendMessage(this.plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
+    if(plugin.getConfig().getBoolean("options.printSongTitel")) {
+      p.sendMessage(this.plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
+    }
   }
 
   private static int getTimeSeconds(short ticks, float speed) {
