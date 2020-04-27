@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>com.github.koca2000</groupId>
 			<artifactId>NoteBlockAPI</artifactId>
-			<version>1.4.4</version>
+			<version>1.5.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- bStats API -->
