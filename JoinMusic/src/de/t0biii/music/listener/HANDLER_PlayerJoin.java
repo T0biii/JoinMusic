@@ -2,6 +2,7 @@ package de.t0biii.music.listener;
 
 import java.io.File;
 import java.util.HashMap;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,28 +28,35 @@ public class HANDLER_PlayerJoin implements Listener {
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
+    int delay = plugin.getConfig().getInt("options.delaySong");
+    
+    Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+      @Override
+      public void run() {
+        try {
+          Song s = NBSDecoder.parse(
+              new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music")));
+          final SongPlayer sp = new RadioSongPlayer(s);
 
-    try {
-      Song s = NBSDecoder
-          .parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music")));
-      final SongPlayer sp = new RadioSongPlayer(s);
+          int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
+          int songLengthInMillisec = songLengthInSec * 1000;
 
-      int songLengthInSec = getTimeSeconds(sp.getSong().getLength(), sp.getSong().getSpeed());
-      int songLengthInMillisec = songLengthInSec * 1000;
-
-      if (player.hasPermission("JoinMusic.use") || player.isOp()) {
-        if (!playing.containsKey(player.getUniqueId().toString())) {
-          playSong(sp, player, songLengthInMillisec);
-        } else {
-          if (playing.get(player.getUniqueId().toString()) <= System.currentTimeMillis()) {
-            playing.remove(player.getUniqueId().toString());
-            playSong(sp, player, songLengthInMillisec);
+          if (player.hasPermission("JoinMusic.use") || player.isOp()) {
+            if (!playing.containsKey(player.getUniqueId().toString())) {
+              playSong(sp, player, songLengthInMillisec);
+            } else {
+              if (playing.get(player.getUniqueId().toString()) <= System.currentTimeMillis()) {
+                playing.remove(player.getUniqueId().toString());
+                playSong(sp, player, songLengthInMillisec);
+              }
+            }
           }
+        } catch (IllegalArgumentException e) {
+          System.err.println(plugin.cprefix + "No sounds detected");
         }
       }
-    } catch (IllegalArgumentException e) {
-      System.err.println(plugin.cprefix + "No sounds detected");
-    }
+    }, 20L * delay);
+
     if (this.plugin.update) {
       if ((player.isOp() || player.hasPermission("JoinMusic.update"))
           && plugin.getConfig().getBoolean("options.updateinfo")) {
@@ -67,8 +75,9 @@ public class HANDLER_PlayerJoin implements Listener {
     playing.put(p.getUniqueId().toString(), (System.currentTimeMillis() + songlengthmilli));
     sp.addPlayer(p);
     sp.setPlaying(true);
-    if(plugin.getConfig().getBoolean("options.printSongTitel")) {
-      p.sendMessage(this.plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
+    if (plugin.getConfig().getBoolean("options.printSongTitel")) {
+      p.sendMessage(
+          this.plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
     }
   }
 

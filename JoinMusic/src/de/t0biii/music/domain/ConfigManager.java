@@ -16,6 +16,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.update-check", true);
     this.plugin.getConfig().addDefault("options.updateinfo", true);
     this.plugin.getConfig().addDefault("options.printSongTitel", true);
+    this.plugin.getConfig().addDefault("options.delaySong", 2);
     this.plugin.getConfig().addDefault("messages.reload", "Reload Erfolgreich!");
     this.plugin.getConfig().addDefault("messages.no-permission",
         "You don't have enough permissions");
