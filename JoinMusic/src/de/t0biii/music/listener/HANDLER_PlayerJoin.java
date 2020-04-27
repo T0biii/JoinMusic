@@ -29,7 +29,7 @@ public class HANDLER_PlayerJoin implements Listener {
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
     int delay = plugin.getConfig().getInt("options.delaySong");
-    
+
     Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
       @Override
       public void run() {
