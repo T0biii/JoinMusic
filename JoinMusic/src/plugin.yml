@@ -19,3 +19,4 @@ commands:
       permissions: 
         JoinMusik.command.reload
         JoinMusik.command.stop
+        JoinMusik.use

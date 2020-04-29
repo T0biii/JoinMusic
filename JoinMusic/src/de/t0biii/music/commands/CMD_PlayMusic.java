@@ -22,39 +22,41 @@ public class CMD_PlayMusic implements CommandExecutor {
 
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-
-    if (sender instanceof Player) {
-      Player player = ((Player) sender).getPlayer();
-      String noperm = plugin.getConfig().getString("messages.no-permission");
-      if (args.length == 1) {
-        if (args[0].equalsIgnoreCase("reload")) {
-          if (sender.hasPermission("JoinMusic.command.reload")) {
-            try {
-              plugin.reloadConfig();
+    if (sender.hasPermission("JoinMusic.use")) {
+      if (sender instanceof Player) {
+        Player player = ((Player) sender).getPlayer();
+        String noperm = plugin.getConfig().getString("messages.no-permission");
+        if (args.length == 1) {
+          if (args[0].equalsIgnoreCase("reload")) {
+            if (sender.hasPermission("JoinMusic.command.reload")) {
+              try {
+                plugin.reloadConfig();
+                player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA
+                    + plugin.getConfig().getString("messages.reload"));
+              } catch (Exception exception) {
+                player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
+              }
+            } else {
+              sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
+            }
+          } else if (args[0].equalsIgnoreCase("stop")) {
+            if (sender.hasPermission("JoinMusic.command.stop")) {
+              Music.stop(player);
               player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA
-                  + plugin.getConfig().getString("messages.reload"));
-            } catch (Exception exception) {
-              player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
+                  + plugin.getConfig().getString("messages.stop"));
+            } else {
+              sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
             }
           } else {
-            sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
+            sendInstructions(player);
           }
-        } else if (args[0].equalsIgnoreCase("stop")) {
-          if (sender.hasPermission("JoinMusic.command.stop")) {
-            Music.stop(player);
-            player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA
-                + plugin.getConfig().getString("messages.stop"));
-          } else {
-            sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
-          }
-        }else {
+        } else {
           sendInstructions(player);
         }
-      } else
-        sendInstructions(player);
-    } else
-      sender.sendMessage(plugin.prefix + "This command is not for console!");
-
+      } else {
+        sender.sendMessage(plugin.prefix + "This command is not for console!");
+      }
+    }
     return true;
   }
 
@@ -64,7 +66,7 @@ public class CMD_PlayMusic implements CommandExecutor {
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY
         + "| " + ChatColor.GREEN + "Config Reload!");
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY
-        + "| " + ChatColor.GREEN + "Stop Song Playing!");    
+        + "| " + ChatColor.GREEN + "Stop Song Playing!");
     sender.sendMessage(
         ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
   }
