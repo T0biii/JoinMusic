@@ -45,7 +45,7 @@ public class Music {
   private static void playSong(Player player, Main plugin) {
     try {
       File songFile;
-      if(plugin.getConfig().getBoolean("music.random")) {
+      if(plugin.getConfig().getBoolean("options.music.random")) {
         songFile = SelectRandomFileFromFolder(plugin);  
       }else {
         songFile = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
@@ -63,14 +63,24 @@ public class Music {
     }
   }
   
+  public static void createRandomFileDir(Main plugin) {
+    File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername"));
+    if(!dir.exists()) {
+      dir.mkdirs();
+    }
+  }
+  
   private static File SelectRandomFileFromFolder(Main plugin){
-    File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music.RandomFoldername"));
+    createRandomFileDir(plugin);
+    File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername"));
     if(dir.exists()) {
       File[] files = dir.listFiles();
       if(files.length > 0) {
         Random rand = new Random();
         File file = files[rand.nextInt(files.length)];
         return file;
+      }else {
+        return new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
       }
     }
     return null;
