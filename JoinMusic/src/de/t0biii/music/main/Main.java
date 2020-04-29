@@ -3,9 +3,11 @@ package de.t0biii.music.main;
 import java.util.logging.Logger;
 import de.t0biii.music.commands.CMD_PlayMusic;
 import de.t0biii.music.domain.ConfigManager;
+import de.t0biii.music.domain.Music;
 import de.t0biii.music.domain.Updater;
 import de.t0biii.music.domain.Updater.ReleaseType;
 import de.t0biii.music.listener.HANDLER_PlayerJoin;
+import de.t0biii.music.listener.HANDLER_PlayerQuit;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -51,9 +53,10 @@ public class Main extends JavaPlugin {
     }
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
+    pm.registerEvents(new HANDLER_PlayerQuit(), this);
     getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
     getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
-
+    Music.createRandomFileDir(this);
     log.info(cprefix + "Enabled");
   }
 

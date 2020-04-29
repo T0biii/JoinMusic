@@ -4,7 +4,7 @@ authors:
 - Fruxz
 depend:
 - NoteBlockAPI
-version: '3.1'
+version: '4.0'
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 main: de.t0biii.music.main.Main
 database: false
@@ -16,4 +16,7 @@ commands:
       - jm
       - joinmusic
       - joinmusik
-      permission: JoinMusik.command.reload
+      permissions: 
+        JoinMusik.command.reload
+        JoinMusik.command.stop
+        JoinMusik.use
