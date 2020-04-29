@@ -37,7 +37,7 @@ public class CMD_PlayMusic implements CommandExecutor {
               player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
             }
           } else {
-            sender.sendMessage(plugin.prefix + noperm);
+            sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
           }
         } else if (args[0].equalsIgnoreCase("stop")) {
           if (sender.hasPermission("JoinMusic.command.stop")) {
@@ -45,7 +45,7 @@ public class CMD_PlayMusic implements CommandExecutor {
             player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA
                 + plugin.getConfig().getString("messages.stop"));
           } else {
-            sender.sendMessage(plugin.prefix + noperm);
+            sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
           }
         }else {
           sendInstructions(player);
