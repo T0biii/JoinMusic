@@ -2,6 +2,7 @@ package de.t0biii.music.domain;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.UUID;
 import org.bukkit.entity.Player;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
@@ -43,7 +44,13 @@ public class Music {
 
   private static void playSong(Player player, Main plugin) {
     try {
-      Song s = NBSDecoder.parse(new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music")));
+      File songFile;
+      if(plugin.getConfig().getBoolean("music.random")) {
+        songFile = SelectRandomFileFromFolder(plugin);  
+      }else {
+        songFile = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
+      }
+      Song s = NBSDecoder.parse(songFile);
       final SongPlayer sp = new RadioSongPlayer(s);
       playingSong.put(player.getUniqueId(), sp);
       sp.addPlayer(player);
@@ -55,5 +62,17 @@ public class Music {
       System.err.println(plugin.cprefix + "No sounds detected");
     }
   }
-
+  
+  private static File SelectRandomFileFromFolder(Main plugin){
+    File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music.RandomFoldername"));
+    if(dir.exists()) {
+      File[] files = dir.listFiles();
+      if(files.length > 0) {
+        Random rand = new Random();
+        File file = files[rand.nextInt(files.length)];
+        return file;
+      }
+    }
+    return null;
+  }
 }
