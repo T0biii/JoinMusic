@@ -4,7 +4,7 @@ authors:
 - Fruxz
 depend:
 - NoteBlockAPI
-version: '3.1'
+version: '3.2'
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 main: de.t0biii.music.main.Main
 database: false
