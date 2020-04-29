@@ -25,6 +25,7 @@ public class CMD_PlayMusic implements CommandExecutor {
 
     if (sender instanceof Player) {
       Player player = ((Player) sender).getPlayer();
+      String noperm = plugin.getConfig().getString("messages.no-permission");
       if (args.length == 1) {
         if (args[0].equalsIgnoreCase("reload")) {
           if (sender.hasPermission("JoinMusic.command.reload")) {
@@ -36,7 +37,7 @@ public class CMD_PlayMusic implements CommandExecutor {
               player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
             }
           } else {
-            sender.sendMessage(cmd.getPermissionMessage());
+            sender.sendMessage(plugin.prefix + noperm);
           }
         } else if (args[0].equalsIgnoreCase("stop")) {
           if (sender.hasPermission("JoinMusic.command.stop")) {
@@ -44,7 +45,7 @@ public class CMD_PlayMusic implements CommandExecutor {
             player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA
                 + plugin.getConfig().getString("messages.stop"));
           } else {
-            sender.sendMessage(cmd.getPermissionMessage());
+            sender.sendMessage(plugin.prefix + noperm);
           }
         }else {
           sendInstructions(player);
