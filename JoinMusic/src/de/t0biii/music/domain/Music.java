@@ -58,7 +58,11 @@ public class Music {
       sp.addPlayer(player);
       sp.setPlaying(true);
       if (plugin.getConfig().getBoolean("options.printSongTitel")) {
-        player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
+        if(!sp.getSong().getTitle().isEmpty()) {
+          player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
+        }else {
+          player.sendMessage(plugin.prefix + "§2Start Playing the Song.");
+        }
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");
