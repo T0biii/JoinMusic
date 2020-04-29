@@ -16,4 +16,6 @@ commands:
       - jm
       - joinmusic
       - joinmusik
-      permission: JoinMusik.command.reload
+      permissions: 
+        JoinMusik.command.reload
+        JoinMusik.command.stop
