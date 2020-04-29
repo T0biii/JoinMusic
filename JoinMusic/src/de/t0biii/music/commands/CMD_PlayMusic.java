@@ -82,7 +82,8 @@ public class CMD_PlayMusic implements CommandExecutor {
         }
         if(commandSender.hasPermission("JoinMusic.command.stop")) {
           list.add("stop");
-        }else {
+        }
+        if(!commandSender.hasPermission("JoinMusic.command.stop") && !commandSender.hasPermission("JoinMusic.command.reload")) {
           list.add(" ");
         }
         return list;
