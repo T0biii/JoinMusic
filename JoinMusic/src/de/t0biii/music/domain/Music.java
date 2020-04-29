@@ -61,7 +61,7 @@ public class Music {
         if(!sp.getSong().getTitle().isEmpty()) {
           player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
         }else {
-          player.sendMessage(plugin.prefix + "§2Start Playing the Song.");
+          player.sendMessage(plugin.prefix + "§2Start Playing a Song.");
         }
       }
     } catch (IllegalArgumentException e) {
