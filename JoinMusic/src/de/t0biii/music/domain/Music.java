@@ -1,10 +1,12 @@
 package de.t0biii.music.domain;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 import org.bukkit.entity.Player;
+import com.google.common.io.Files;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
 import com.xxmicloxx.NoteBlockAPI.songplayer.RadioSongPlayer;
 import com.xxmicloxx.NoteBlockAPI.songplayer.SongPlayer;
@@ -67,6 +69,12 @@ public class Music {
     File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername"));
     if(!dir.exists()) {
       dir.mkdirs();
+      File songFile =  new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
+      File copyDir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername") + "/" + plugin.getConfig().getString("music"));
+      try {
+        Files.copy(songFile, copyDir);
+      } catch (IOException e) {
+      }
     }
   }
   
