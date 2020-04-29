@@ -13,8 +13,8 @@ public class ConfigManager {
   public void loadConfig() {
     this.plugin.getConfig().options().header("Plugin by itzTobi_!\nChange at your own risk");
     this.plugin.getConfig().addDefault("music", "Song.nbs");
-    this.plugin.getConfig().addDefault("music.random", false);
-    this.plugin.getConfig().addDefault("music.RandomFoldername", "random");
+    this.plugin.getConfig().addDefault("options.music.random", false);
+    this.plugin.getConfig().addDefault("options.music.RandomFoldername", "random");
     this.plugin.getConfig().addDefault("options.update-check", true);
     this.plugin.getConfig().addDefault("options.updateinfo", true);
     this.plugin.getConfig().addDefault("options.printSongTitel", true);
