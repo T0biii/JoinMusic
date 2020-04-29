@@ -77,8 +77,14 @@ public class CMD_PlayMusic implements CommandExecutor {
         String[] strings) {
       if (strings.length == 1) {
         ArrayList<String> list = new ArrayList<String>();
-        list.add("reload");
-        list.add("stop");
+        if(commandSender.hasPermission("JoinMusic.command.reload")) {
+          list.add("reload");
+        }
+        if(commandSender.hasPermission("JoinMusic.command.stop")) {
+          list.add("stop");
+        }else {
+          list.add(" ");
+        }
         return list;
       }
       return Collections.singletonList(" ");
