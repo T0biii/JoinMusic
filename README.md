@@ -2,3 +2,5 @@
 Bukkit JoinMusic
 
 https://dev.bukkit.org/projects/joinmusik
+
+https://www.spigotmc.org/resources/joinmusic.78169/
