@@ -1,0 +1,23 @@
+name: JoinMusic
+authors:
+  - T0biii
+  - Fruxz
+depend:
+  - NoteBlockAPI
+version: ${project.version}
+website: http://dev.bukkit.org/bukkit-plugins/joinmusik
+main: de.t0biii.music.main.Main
+database: false
+commands:
+  JoinMusic:
+    description: /JoinMusic
+    usage: /<command> [reload]
+    aliases:
+      - jm
+      - joinmusic
+      - joinmusik
+    permissions:
+      JoinMusik.command.reload
+      JoinMusik.command.stop
+      JoinMusik.use
+api-version: 1.13
