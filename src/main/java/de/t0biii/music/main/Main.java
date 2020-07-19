@@ -12,7 +12,7 @@ import de.t0biii.music.listener.HANDLER_SongEndEvent;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;;
+import org.bukkit.plugin.java.JavaPlugin;
 import de.t0biii.music.domain.bStatsCostum;
 
 
