@@ -16,20 +16,20 @@ commands:
       - jm
       - joinmusic
       - joinmusik
-    permissions:
-      JoinMusic.command.reload:
-        description: Allows reloading configs
-        default: op
-      JoinMusic.update:
-        description: Will get info about updates
-        default: op
-      JoinMusic.command.stop:
-        description: Allows stopping music from playing
-        default: true
-      JoinMusic.command.disableOwn:
-        description: Allows disabling music on join for themself
-        default: true
-      JoinMusic.use:
-        description: Allows the user to hear the music on join
-        default: true
+permissions:
+  JoinMusic.command.reload:
+    description: Allows reloading configs
+    default: op
+  JoinMusic.update:
+    description: Will get info about updates
+    default: op
+  JoinMusic.command.stop:
+    description: Allows stopping music from playing
+    default: true
+  JoinMusic.command.disableOwn:
+    description: Allows disabling music on join for themself
+    default: true
+  JoinMusic.use:
+    description: Allows the user to hear the music on join and access the command
+    default: true
 api-version: 1.13
