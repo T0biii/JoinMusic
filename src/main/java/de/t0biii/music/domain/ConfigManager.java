@@ -22,6 +22,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("messages.reload", "The reload was successful!");
     this.plugin.getConfig().addDefault("messages.stop", "The song was stopped!");
     this.plugin.getConfig().addDefault("messages.no-permission", "You don't have enough permissions");
+    this.plugin.getConfig().addDefault("messages.help.stop", "Stop Song Playing!");
     this.plugin.getConfig().addDefault("messages.playing", "&2Started Playing the Song: &a&l%song%");
     this.plugin.getConfig().addDefault("options.metrics", true);
 

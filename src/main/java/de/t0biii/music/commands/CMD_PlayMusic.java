@@ -66,7 +66,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         + ChatColor.GREEN + "Config Reload!");
     }
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY + "| "
-        + ChatColor.GREEN + "Stop Song Playing!");
+        + ChatColor.GREEN + plugin.getConfig().getString("messages.help.stop"));
     sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
   }
 
