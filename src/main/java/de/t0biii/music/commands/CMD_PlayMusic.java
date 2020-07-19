@@ -101,11 +101,13 @@ public class CMD_PlayMusic implements CommandExecutor {
     }
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY + "| "
         + ChatColor.GREEN + plugin.getConfig().getString("messages.help.stop"));
-    sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "disable  " + ChatColor.DARK_GRAY + "| "
-        + ChatColor.GREEN + plugin.getConfig().getString("messages.help.disableOwn"));
-    sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "enable   " + ChatColor.DARK_GRAY + "| "
-            + ChatColor.GREEN + plugin.getConfig().getString("messages.help.enableOwn"));
-    sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
+    if(sender.hasPermission("JoinMusic.command.disableOwn")) {
+      sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "disable  " + ChatColor.DARK_GRAY + "| "
+          + ChatColor.GREEN + plugin.getConfig().getString("messages.help.disableOwn"));
+      sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "enable   " + ChatColor.DARK_GRAY + "| "
+          + ChatColor.GREEN + plugin.getConfig().getString("messages.help.enableOwn"));
+      sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
+    }
   }
 
   public static TabCompleter tabCompleter = new TabCompleter() {
