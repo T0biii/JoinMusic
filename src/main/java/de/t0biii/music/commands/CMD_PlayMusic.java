@@ -30,8 +30,7 @@ public class CMD_PlayMusic implements CommandExecutor {
           if (args[0].equalsIgnoreCase("reload")) {
             if (sender.hasPermission("JoinMusic.command.reload")) {
               try {
-                plugin.reloadConfig();
-                plugin.loadUserConfigsIfNeeded();
+                plugin.reloadConfigs();
                 player
                     .sendMessage(plugin.prefix + ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.reload"));
               } catch (Exception exception) {
@@ -75,11 +74,8 @@ public class CMD_PlayMusic implements CommandExecutor {
         }
       } else {
     	  if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
-    		  plugin.reloadConfig();
-              plugin.loadUserConfigsIfNeeded();
               try {
-                plugin.reloadConfig();
-                plugin.loadUserConfigsIfNeeded();
+                plugin.reloadConfigs();
                 sender
                   .sendMessage(plugin.cprefix + plugin.getConfig().getString("messages.reload"));
                 } catch (Exception exception) {

@@ -53,8 +53,6 @@ public class Main extends JavaPlugin {
       return;
     }
 
-    cm.loadConfig();
-    saveConfig();
     Updater();
     Music.createRandomFileDir(this);
 
@@ -91,6 +89,13 @@ public class Main extends JavaPlugin {
     }
   }
   
+  public void reloadConfigs() {
+	  this.reloadConfig();
+	  cm.loadConfig();
+	  this.saveConfig();
+	  this.loadUserConfigsIfNeeded();
+  }
+  
   public void loadUserConfigsIfNeeded() {
 	if (this.getConfig().getBoolean("options.allowDisabling")) {
 	  createUserConfigs();
@@ -114,6 +119,7 @@ public class Main extends JavaPlugin {
   public FileConfiguration getUserConfigs() {
     return this.userConfigs;
   }
+  
   public void saveUserConfigs() {
 	try {
 	  this.userConfigs.save(new File(getDataFolder(), "disabledPlayers.yml"));
