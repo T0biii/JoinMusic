@@ -61,8 +61,10 @@ public class CMD_PlayMusic implements CommandExecutor {
 
   private void sendInstructions(CommandSender sender) {
     sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
+    if(sender.hasPermission("JoinMusic.command.reload")) {
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| "
         + ChatColor.GREEN + "Config Reload!");
+    }
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY + "| "
         + ChatColor.GREEN + "Stop Song Playing!");
     sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
