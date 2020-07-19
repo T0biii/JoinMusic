@@ -25,28 +25,49 @@ public class CMD_PlayMusic implements CommandExecutor {
     if (sender.hasPermission("JoinMusic.use")) {
       if (sender instanceof Player) {
         Player player = ((Player) sender).getPlayer();
-        String noperm = plugin.getConfig().getString("messages.no-permission");
+        String noperm = plugin.getConfig().getString("messages.no-permission").replaceAll("&", "§");
         if (args.length == 1) {
           if (args[0].equalsIgnoreCase("reload")) {
             if (sender.hasPermission("JoinMusic.command.reload")) {
               try {
                 plugin.reloadConfig();
+                plugin.loadUserConfigsIfNeeded();
                 player
                     .sendMessage(plugin.prefix + ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.reload"));
               } catch (Exception exception) {
                 player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
               }
             } else {
-              sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
+              sender.sendMessage(plugin.prefix + noperm);
             }
           } else if (args[0].equalsIgnoreCase("stop")) {
             if (sender.hasPermission("JoinMusic.command.stop")) {
               Music.stop(player);
-              player.sendMessage(plugin.prefix + ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.stop"));
+              player.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.stop").replaceAll("&", "§"));
             } else {
-              sender.sendMessage(plugin.prefix + ChatColor.RED + noperm);
+              sender.sendMessage(plugin.prefix + noperm);
             }
-          } else {
+          } else if (args[0].equalsIgnoreCase("disable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
+        	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
+        		plugin.getUserConfigs().set(player.getUniqueId().toString(),true);
+        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
+       		    plugin.saveUserConfigs();
+        	  }else {
+        		sender.sendMessage(plugin.prefix + noperm);
+        	  }
+          }else if (args[0].equalsIgnoreCase("enable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
+        	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
+        		// Preventing to set it to enabled if it doesn't exist, saving file size
+        		// It's not possible to just remove it with FileConfiguration I think
+        		if(plugin.getUserConfigs().isSet(player.getUniqueId().toString())) {
+        		  plugin.getUserConfigs().set(player.getUniqueId().toString(),false);
+        		  plugin.saveUserConfigs();
+        		}
+        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
+        	  } else {
+        		sender.sendMessage(plugin.prefix + noperm);
+        	  }
+          } else{
             sendInstructions(player);
           }
         } else {
@@ -62,11 +83,15 @@ public class CMD_PlayMusic implements CommandExecutor {
   private void sendInstructions(CommandSender sender) {
     sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
     if(sender.hasPermission("JoinMusic.command.reload")) {
-    sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| "
-        + ChatColor.GREEN + "Config Reload!");
+      sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "reload  " + ChatColor.DARK_GRAY + "| "
+          + ChatColor.GREEN + "Config Reload!");
     }
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY + "| "
         + ChatColor.GREEN + plugin.getConfig().getString("messages.help.stop"));
+    sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "disable  " + ChatColor.DARK_GRAY + "| "
+        + ChatColor.GREEN + plugin.getConfig().getString("messages.help.disableOwn"));
+    sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "enable   " + ChatColor.DARK_GRAY + "| "
+            + ChatColor.GREEN + plugin.getConfig().getString("messages.help.enableOwn"));
     sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
   }
 
@@ -81,6 +106,11 @@ public class CMD_PlayMusic implements CommandExecutor {
         if (commandSender.hasPermission("JoinMusic.command.stop")) {
           list.add("stop");
         }
+        /* Disabled since can't check if the setting is active because this is static and Main isn't
+           if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
+            list.add("disable");
+          }
+        */
         if (!commandSender.hasPermission("JoinMusic.command.stop")
             && !commandSender.hasPermission("JoinMusic.command.reload")) {
           list.add(" ");

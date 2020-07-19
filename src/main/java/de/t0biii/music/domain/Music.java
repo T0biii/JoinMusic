@@ -22,6 +22,11 @@ public class Music {
   private static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
   public static void start(Player player, Main plugin){
+	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
+		if(plugin.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
+			return;
+		}
+	}
     play(player, plugin);
   }
   public static void stop(Player player) {
@@ -32,7 +37,7 @@ public class Music {
   }
 
   private static void play(Player player, Main plugin) {
-    if (player.hasPermission("JoinMusic.use") || player.isOp()) {
+    if ((player.hasPermission("JoinMusic.use") || player.isOp())) {
       if (!playingSong.containsKey(player.getUniqueId())) {
         playSong(player, plugin);
       } else {

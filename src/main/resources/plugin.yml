@@ -26,6 +26,9 @@ commands:
       JoinMusic.command.stop:
         description: Allows stopping music from playing
         default: true
+      JoinMusic.command.disableOwn:
+        description: Allows disabling music on join for themself
+        default: true
       JoinMusic.use:
         description: Allows the user to hear the music on join
         default: true

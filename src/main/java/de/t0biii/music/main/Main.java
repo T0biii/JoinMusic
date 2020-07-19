@@ -1,5 +1,7 @@
 package de.t0biii.music.main;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.logging.Logger;
 import de.t0biii.music.commands.CMD_PlayMusic;
 import de.t0biii.music.domain.ConfigManager;
@@ -11,6 +13,9 @@ import de.t0biii.music.listener.HANDLER_PlayerQuit;
 import de.t0biii.music.listener.HANDLER_SongEndEvent;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import de.t0biii.music.domain.bStatsCostum;
@@ -27,6 +32,8 @@ public class Main extends JavaPlugin {
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
   private int uid = 83541;
   public Updater updater;
+  
+  private FileConfiguration userConfigs = null;
 
 
   public ConfigManager cm = new ConfigManager(this);
@@ -55,6 +62,8 @@ public class Main extends JavaPlugin {
       Metrics metrics = new Metrics(this, 6447);
       new bStatsCostum(this).customCharts(metrics);
     }
+    
+    loadUserConfigsIfNeeded();
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
@@ -80,5 +89,36 @@ public class Main extends JavaPlugin {
         log.info(cprefix + "Download at: " + link2);
       }
     }
+  }
+  
+  public void loadUserConfigsIfNeeded() {
+	if (this.getConfig().getBoolean("options.allowDisabling")) {
+	  createUserConfigs();
+	}
+  }
+  
+  private void createUserConfigs() {
+	File userConfigsFile = new File(getDataFolder(), "disabledPlayers.yml");
+    if (!userConfigsFile.exists()) {
+      userConfigsFile.getParentFile().mkdirs();
+      saveResource("disabledPlayers.yml", false);
+    }
+	userConfigs = new YamlConfiguration();
+	try {
+        userConfigs.load(userConfigsFile);
+    } catch (IOException | InvalidConfigurationException e) {
+        e.printStackTrace();
+    }
+  }
+  
+  public FileConfiguration getUserConfigs() {
+    return this.userConfigs;
+  }
+  public void saveUserConfigs() {
+	try {
+	  this.userConfigs.save(new File(getDataFolder(), "disabledPlayers.yml"));
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
   }
 }
