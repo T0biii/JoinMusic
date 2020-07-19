@@ -21,7 +21,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.delaySong", 2);
     this.plugin.getConfig().addDefault("options.allowDisabling", true);
     this.plugin.getConfig().addDefault("messages.reload", "The reload was successful!");
-    this.plugin.getConfig().addDefault("messages.stop", "&3Stopped playing the song! &7&oYou can disable playing a song on join with &b&o/jm stop");
+    this.plugin.getConfig().addDefault("messages.stop", "&3Stopped playing the song! &7&oYou can disable playing a song on join with &b&o/jm disable");
     this.plugin.getConfig().addDefault("messages.no-permission", "&cYou don't have enough permissions");
     this.plugin.getConfig().addDefault("messages.help.stop", "Stop playing the Song!");
     this.plugin.getConfig().addDefault("messages.help.disableOwn", "Disable playing a song when joining");
