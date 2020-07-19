@@ -79,12 +79,11 @@ public class Music {
       }
       playingSong.put(player.getUniqueId(), sp);
 
-      if (plugin.getConfig().getBoolean("options.printSongTitel")) {
-        if (!sp.getSong().getTitle().isEmpty()) {
-          player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
-        } else {
-          player.sendMessage(plugin.prefix + "§2Start Playing a Song.");
-        }
+      String playingMessage = plugin.getConfig().getString("messages.playing");
+      if (!playingMessage.isEmpty()) {
+        player.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.playing")
+        		  			.replaceAll("%song%",sp.getSong().getTitle())
+        		  			.replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");
