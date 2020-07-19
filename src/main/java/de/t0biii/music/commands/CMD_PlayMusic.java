@@ -106,13 +106,13 @@ public class CMD_PlayMusic implements CommandExecutor {
         if (commandSender.hasPermission("JoinMusic.command.stop")) {
           list.add("stop");
         }
-        /* Disabled since can't check if the setting is active because this is static and Main isn't
            if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
+        	list.add("enable");
             list.add("disable");
           }
-        */
         if (!commandSender.hasPermission("JoinMusic.command.stop")
-            && !commandSender.hasPermission("JoinMusic.command.reload")) {
+            && !commandSender.hasPermission("JoinMusic.command.reload")
+            && !commandSender.hasPermission("JoinMusic.command.disableOwn")) {
           list.add(" ");
         }
         return list;
