@@ -52,7 +52,11 @@ public class Main extends JavaPlugin {
       log.info(cprefix + "Disabled!");
       return;
     }
-
+    
+    cm.loadConfig();
+    saveConfig();
+    loadUserConfigsIfNeeded();
+    
     Updater();
     Music.createRandomFileDir(this);
 
@@ -61,7 +65,6 @@ public class Main extends JavaPlugin {
       new bStatsCostum(this).customCharts(metrics);
     }
     
-    loadUserConfigsIfNeeded();
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
