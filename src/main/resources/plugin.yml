@@ -11,7 +11,7 @@ database: false
 commands:
   JoinMusic:
     description: /JoinMusic
-    usage: /<command> [reload]
+    usage: /<command> [reload | stop | enable | disable]
     aliases:
       - jm
       - joinmusic
