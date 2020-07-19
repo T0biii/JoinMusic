@@ -74,7 +74,20 @@ public class CMD_PlayMusic implements CommandExecutor {
           sendInstructions(player);
         }
       } else {
-        sender.sendMessage(plugin.prefix + "This command is not for console!");
+    	  if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
+    		  plugin.reloadConfig();
+              plugin.loadUserConfigsIfNeeded();
+              try {
+                plugin.reloadConfig();
+                plugin.loadUserConfigsIfNeeded();
+                sender
+                  .sendMessage(plugin.cprefix + plugin.getConfig().getString("messages.reload"));
+                } catch (Exception exception) {
+                  sender.sendMessage(plugin.cprefix + ChatColor.RED + "Reload failed!");
+                }
+    	  }else {
+    		  sender.sendMessage(plugin.cprefix + "Only reload is for console!");
+    	  }
       }
     }
     return true;
