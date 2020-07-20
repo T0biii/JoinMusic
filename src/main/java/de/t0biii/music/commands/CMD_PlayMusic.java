@@ -56,12 +56,8 @@ public class CMD_PlayMusic implements CommandExecutor {
         	  }
           }else if (args[0].equalsIgnoreCase("enable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
-        		// Preventing to set it to enabled if it doesn't exist, saving file size
-        		// It's not possible to just remove it with FileConfiguration I think
-        		if(plugin.getUserConfigs().isSet(player.getUniqueId().toString())) {
-        		  plugin.getUserConfigs().set(player.getUniqueId().toString(),false);
+        		  plugin.getUserConfigs().set(player.getUniqueId().toString(),null);
         		  plugin.saveUserConfigs();
-        		}
         		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
         	  } else {
         		sender.sendMessage(plugin.prefix + noperm);
