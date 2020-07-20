@@ -20,7 +20,7 @@ public class ConfigManager {
   }
 
   public void loadConfig() {
-    this.plugin.getConfig().options().header("Plugin by itzTobi_!\nChange at your own risk\nOnly the messages with color codes here support color codes. The rest have a default color");
+    this.plugin.getConfig().options().header("Plugin by itzTobi_!\nChange at your own risk\nOnly the messages with color codes here support color codes. The rest have a default color\nTo disable the Playing song message, empty it (set it to '')");
     this.plugin.getConfig().addDefault("music", "Song.nbs");
     this.plugin.getConfig().addDefault("options.music.random", false);
     this.plugin.getConfig().addDefault("options.music.RandomFoldername", "random");
