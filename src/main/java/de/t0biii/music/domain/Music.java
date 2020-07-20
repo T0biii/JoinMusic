@@ -37,7 +37,7 @@ public class Music {
   }
 
   private static void play(Player player, Main plugin) {
-    if ((player.hasPermission("JoinMusic.use") || player.isOp())) {
+    if (player.hasPermission("JoinMusic.use") || player.isOp()) {
       if (!playingSong.containsKey(player.getUniqueId())) {
         playSong(player, plugin);
       } else {
