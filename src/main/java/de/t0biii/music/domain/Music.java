@@ -87,7 +87,7 @@ public class Music {
       String playingMessage = plugin.getConfig().getString("messages.playing");
       if (!playingMessage.isEmpty()) {
         player.sendMessage(plugin.prefix + 
-        		playingMessage.replaceAll("%song%",sp.getSong().getTitle()).replaceAll("&", "§"));
+        		playingMessage.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle()).replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");

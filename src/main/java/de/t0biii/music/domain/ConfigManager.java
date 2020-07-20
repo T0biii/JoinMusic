@@ -28,7 +28,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("messages.help.enableOwn", "Enable playing a song when joining");
     this.plugin.getConfig().addDefault("messages.disabled","&3Disabled playing a song when joining. To enable it again, use &b/jm enable");
     this.plugin.getConfig().addDefault("messages.enabled","&3Enabled playing a song when joining");
-    this.plugin.getConfig().addDefault("messages.playing", "&2Started Playing the Song: &a&l%song%.&2 You can stop it using &a/jm stop");
+    this.plugin.getConfig().addDefault("messages.playing", "&2Started Playing the Song: &a&l%song%&2. You can stop it using &a/jm stop");
     this.plugin.getConfig().addDefault("options.metrics", true);
 
     this.plugin.getConfig().options().copyDefaults(true);
