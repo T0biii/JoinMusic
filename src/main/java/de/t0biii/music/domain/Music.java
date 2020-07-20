@@ -23,7 +23,7 @@ public class Music {
 
   public static void start(Player player, Main plugin){
 	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
-		if(plugin.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
+		if(plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
 			return;
 		}
 	}

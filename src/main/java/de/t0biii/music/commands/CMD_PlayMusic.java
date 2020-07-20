@@ -30,7 +30,7 @@ public class CMD_PlayMusic implements CommandExecutor {
           if (args[0].equalsIgnoreCase("reload")) {
             if (sender.hasPermission("JoinMusic.command.reload")) {
               try {
-                plugin.reloadConfigs();
+                plugin.cm.reloadConfigs();
                 player
                     .sendMessage(plugin.prefix + ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.reload"));
               } catch (Exception exception) {
@@ -48,16 +48,16 @@ public class CMD_PlayMusic implements CommandExecutor {
             }
           } else if (args[0].equalsIgnoreCase("disable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
-        		plugin.getUserConfigs().set(player.getUniqueId().toString(),true);
+        		plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),true);
         		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
-       		    plugin.saveUserConfigs();
+       		    plugin.cm.saveUserConfigs();
         	  }else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
           }else if (args[0].equalsIgnoreCase("enable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
-        		  plugin.getUserConfigs().set(player.getUniqueId().toString(),null);
-        		  plugin.saveUserConfigs();
+        		  plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),null);
+        		  plugin.cm.saveUserConfigs();
         		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
         	  } else {
         		sender.sendMessage(plugin.prefix + noperm);
@@ -71,7 +71,7 @@ public class CMD_PlayMusic implements CommandExecutor {
       } else {
     	  if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
               try {
-                plugin.reloadConfigs();
+                plugin.cm.reloadConfigs();
                 sender
                   .sendMessage(plugin.cprefix + plugin.getConfig().getString("messages.reload"));
                 } catch (Exception exception) {

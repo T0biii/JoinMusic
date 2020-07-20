@@ -1,10 +1,19 @@
 package de.t0biii.music.domain;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import de.t0biii.music.main.Main;
 
 public class ConfigManager {
 
   private Main plugin;
+  
+  private FileConfiguration userConfigs = null;
 
   public ConfigManager(Main plugin) {
     this.plugin = plugin;
@@ -32,5 +41,44 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.metrics", true);
 
     this.plugin.getConfig().options().copyDefaults(true);
+  }
+
+  public void reloadConfigs() {
+	  plugin.reloadConfig();
+	  loadConfig();
+	  plugin.saveConfig();
+	  loadUserConfigsIfNeeded();
+  }
+  
+  private void createUserConfigs() {
+	  File userConfigsFile = new File(plugin.getDataFolder(), "disabledPlayers.yml");
+    if (!userConfigsFile.exists()) {
+      userConfigsFile.getParentFile().mkdirs();
+      plugin.saveResource("disabledPlayers.yml", false);
+    }
+	  this.userConfigs = new YamlConfiguration();
+      try {
+        this.userConfigs.load(userConfigsFile);
+    } catch (IOException | InvalidConfigurationException e) {
+        e.printStackTrace();
+    }
+  }
+  
+  public FileConfiguration getUserConfigs() {
+	return this.userConfigs;
+  }
+  
+  public void loadUserConfigsIfNeeded() {
+	if (plugin.getConfig().getBoolean("options.allowDisabling")) {
+	  createUserConfigs();
+	}
+  }
+  
+  public void saveUserConfigs() {
+	try {
+	  this.userConfigs.save(new File(plugin.getDataFolder(), "disabledPlayers.yml"));
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
   }
 }
