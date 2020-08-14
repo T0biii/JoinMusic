@@ -24,7 +24,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (random.equalsIgnoreCase("true") || random.equalsIgnoreCase("false")) {
                     return random;
                 }
@@ -34,7 +34,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_update-check", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (updateCheck.equalsIgnoreCase("true") || updateCheck.equalsIgnoreCase("false")) {
                     return updateCheck;
                 }
@@ -44,7 +44,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_updateinfo", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (updateinfo.equalsIgnoreCase("true") || updateinfo.equalsIgnoreCase("false")) {
                     return updateCheck;
                 }
@@ -54,7 +54,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_printSongTitel", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (printSongTitel.equalsIgnoreCase("true") || printSongTitel.equalsIgnoreCase("false")) {
                     return printSongTitel;
                 }
@@ -64,7 +64,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_delaySong", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (delaySong != null) {
                     return delaySong;
                 }
@@ -74,7 +74,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_allowDisabling", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (allowDisabling.equalsIgnoreCase("true") || allowDisabling.equalsIgnoreCase("false")) {
                     return allowDisabling;
                 }
@@ -84,7 +84,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_10Octave", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (octave10.equalsIgnoreCase("true") || octave10.equalsIgnoreCase("false")) {
                     return octave10;
                 }
@@ -94,7 +94,7 @@ public class bStatsCostum {
 
         bstats.addCustomChart(new Metrics.SimplePie("options.music.Mode", new Callable<String>() {
             @Override
-            public String call() throws Exception {
+            public String call()  {
                 if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
                     return mode;
                 }
