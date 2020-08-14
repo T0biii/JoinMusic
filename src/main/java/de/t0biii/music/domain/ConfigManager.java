@@ -25,6 +25,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.music.random", false);
     this.plugin.getConfig().addDefault("options.music.RandomFoldername", "random");
     this.plugin.getConfig().addDefault("options.music.Mode", "MonoMode");
+    this.plugin.getConfig().addDefault("options.music.10Octave", false);
     this.plugin.getConfig().addDefault("options.update-check", true);
     this.plugin.getConfig().addDefault("options.updateinfo", true);
     this.plugin.getConfig().addDefault("options.printSongTitel", true);

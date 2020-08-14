@@ -29,9 +29,11 @@ public class Music {
 	}
     play(player, plugin);
   }
+
   public static void stop(Player player) {
     removePlayer(player.getUniqueId());
   }
+
   public static void stop(UUID uuid) {
     removePlayer(uuid);
   }
@@ -72,6 +74,9 @@ public class Music {
       final RadioSongPlayer sp = new RadioSongPlayer(s);
       sp.addPlayer(player);
       sp.setPlaying(true);
+      if(plugin.getConfig().getBoolean("options.music.10Octave")){
+        sp.setEnable10Octave(true);
+      }
       String mode = plugin.getConfig().getString("options.music.Mode");
       if(mode.equalsIgnoreCase("MonoMode")){
         sp.setChannelMode(new MonoMode());
