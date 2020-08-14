@@ -19,6 +19,8 @@ public class bStatsCostum {
         String printSongTitel = plugin.getConfig().getString("options.printSongTitel");
         String allowDisabling = plugin.getConfig().getString("options.allowDisabling");
         String delaySong = plugin.getConfig().getString("options.delaySong");
+        String octave10  = plugin.getConfig().getString("options.music.10Octave");
+        String mode = plugin.getConfig().getString("options.music.Mode", "MonoMode");
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
             @Override
@@ -75,6 +77,26 @@ public class bStatsCostum {
             public String call() throws Exception {
                 if (allowDisabling.equalsIgnoreCase("true") || allowDisabling.equalsIgnoreCase("false")) {
                     return allowDisabling;
+                }
+                return "unknow";
+            }
+        }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("options_music_10Octave", new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                if (octave10.equalsIgnoreCase("true") || octave10.equalsIgnoreCase("false")) {
+                    return octave10;
+                }
+                return "unknow";
+            }
+        }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("options.music.Mode", new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
+                    return mode;
                 }
                 return "unknow";
             }
