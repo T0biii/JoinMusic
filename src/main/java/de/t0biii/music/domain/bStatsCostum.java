@@ -92,7 +92,7 @@ public class bStatsCostum {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options.music.Mode", new Callable<String>() {
+        bstats.addCustomChart(new Metrics.SimplePie("options_music_Mode", new Callable<String>() {
             @Override
             public String call()  {
                 if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
