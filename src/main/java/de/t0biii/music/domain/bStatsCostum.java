@@ -38,6 +38,16 @@ public class bStatsCostum {
             }
         }));
 
+        bstats.addCustomChart(new Metrics.SimplePie("options_printSongTitel", new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                if (printSongTitel.equalsIgnoreCase("true") || printSongTitel.equalsIgnoreCase("false")) {
+                    return printSongTitel;
+                }
+                return "unknow";
+            }
+        }));
+
         bstats.addCustomChart(new Metrics.SimplePie("options_delaySong", new Callable<String>() {
             @Override
             public String call() throws Exception {
