@@ -22,6 +22,11 @@ public class Music {
   private static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
   public static void start(Player player, Main plugin){
+	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
+		if(plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
+			return;
+		}
+	}
     play(player, plugin);
   }
   public static void stop(Player player) {
@@ -79,12 +84,10 @@ public class Music {
       }
       playingSong.put(player.getUniqueId(), sp);
 
-      if (plugin.getConfig().getBoolean("options.printSongTitel")) {
-        if (!sp.getSong().getTitle().isEmpty()) {
-          player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
-        } else {
-          player.sendMessage(plugin.prefix + "§2Start Playing a Song.");
-        }
+      String playingMessage = plugin.getConfig().getString("messages.playing");
+      if (!playingMessage.isEmpty()) {
+        player.sendMessage(plugin.prefix + 
+        		playingMessage.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle()).replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");

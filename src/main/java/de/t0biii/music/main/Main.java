@@ -12,7 +12,7 @@ import de.t0biii.music.listener.HANDLER_SongEndEvent;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;;
+import org.bukkit.plugin.java.JavaPlugin;
 import de.t0biii.music.domain.bStatsCostum;
 
 
@@ -27,6 +27,7 @@ public class Main extends JavaPlugin {
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
   private int uid = 83541;
   public Updater updater;
+  
 
 
   public ConfigManager cm = new ConfigManager(this);
@@ -45,9 +46,11 @@ public class Main extends JavaPlugin {
       log.info(cprefix + "Disabled!");
       return;
     }
-
+    
     cm.loadConfig();
     saveConfig();
+    cm.loadUserConfigsIfNeeded();
+    
     Updater();
     Music.createRandomFileDir(this);
 
@@ -55,6 +58,7 @@ public class Main extends JavaPlugin {
       Metrics metrics = new Metrics(this, 6447);
       new bStatsCostum(this).customCharts(metrics);
     }
+    
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
@@ -81,4 +85,5 @@ public class Main extends JavaPlugin {
       }
     }
   }
+  
 }
