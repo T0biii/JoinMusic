@@ -27,6 +27,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.music.Mode", "MonoMode");
     this.plugin.getConfig().addDefault("options.update-check", true);
     this.plugin.getConfig().addDefault("options.updateinfo", true);
+    this.plugin.getConfig().addDefault("options.printSongTitel", true);
     this.plugin.getConfig().addDefault("options.delaySong", 2);
     this.plugin.getConfig().addDefault("options.allowDisabling", true);
     this.plugin.getConfig().addDefault("messages.reload", "The reload was successful!");

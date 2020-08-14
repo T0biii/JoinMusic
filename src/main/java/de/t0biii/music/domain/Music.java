@@ -85,7 +85,7 @@ public class Music {
       playingSong.put(player.getUniqueId(), sp);
 
       String playingMessage = plugin.getConfig().getString("messages.playing");
-      if (!playingMessage.isEmpty()) {
+      if (!playingMessage.isEmpty() && plugin.getConfig().getBoolean("options.printSongTitel")) {
         player.sendMessage(plugin.prefix + 
         		playingMessage.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle()).replaceAll("&", "§"));
       }
