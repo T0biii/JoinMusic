@@ -32,7 +32,7 @@ public class CMD_PlayMusic implements CommandExecutor {
               try {
                 plugin.cm.reloadConfigs();
                 player
-                    .sendMessage(plugin.prefix + ChatColor.DARK_AQUA + plugin.getConfig().getString("messages.reload"));
+                    .sendMessage(plugin.prefix + plugin.getConfig().getString("messages.reload").replaceAll("&", "§"));
               } catch (Exception exception) {
                 player.sendMessage(plugin.prefix + ChatColor.RED + "Reload failed!");
               }
@@ -113,10 +113,10 @@ public class CMD_PlayMusic implements CommandExecutor {
         if (commandSender.hasPermission("JoinMusic.command.stop")) {
           list.add("stop");
         }
-           if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
-        	list.add("enable");
-            list.add("disable");
-          }
+        if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
+          list.add("enable");
+          list.add("disable");
+        }
         if (!commandSender.hasPermission("JoinMusic.command.stop")
             && !commandSender.hasPermission("JoinMusic.command.reload")
             && !commandSender.hasPermission("JoinMusic.command.disableOwn")) {
