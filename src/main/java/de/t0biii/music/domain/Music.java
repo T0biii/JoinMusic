@@ -116,8 +116,7 @@ public class Music {
       File[] files = dir.listFiles();
       if (files.length > 0) {
         Random rand = new Random();
-        File file = files[rand.nextInt(files.length)];
-        return file;
+        return files[rand.nextInt(files.length)];
       } else {
         return new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
       }
