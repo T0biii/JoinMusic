@@ -2,6 +2,7 @@ name: JoinMusic
 authors:
   - T0biii
   - Fruxz
+  - altrisi
 depend:
   - NoteBlockAPI
 version: ${project.version}
