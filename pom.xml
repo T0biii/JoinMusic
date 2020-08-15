@@ -6,7 +6,7 @@
 
     <groupId>de.t0biii</groupId>
     <artifactId>JoinMusic</artifactId>
-    <version>4.0</version>
+    <version>5.0</version>
     <packaging>jar</packaging>
 
     <name>JoinMusic</name>
@@ -33,7 +33,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.3</version>
+                <version>3.2.4</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -103,7 +103,7 @@
         <dependency>
             <groupId>com.github.koca2000</groupId>
             <artifactId>NoteBlockAPI</artifactId>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- bStats API -->

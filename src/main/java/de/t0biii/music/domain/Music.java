@@ -22,11 +22,18 @@ public class Music {
   private static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
   public static void start(Player player, Main plugin){
+	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
+		if(plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
+			return;
+		}
+	}
     play(player, plugin);
   }
+
   public static void stop(Player player) {
     removePlayer(player.getUniqueId());
   }
+
   public static void stop(UUID uuid) {
     removePlayer(uuid);
   }
@@ -67,6 +74,9 @@ public class Music {
       final RadioSongPlayer sp = new RadioSongPlayer(s);
       sp.addPlayer(player);
       sp.setPlaying(true);
+      if(plugin.getConfig().getBoolean("options.music.10Octave")){
+        sp.setEnable10Octave(true);
+      }
       String mode = plugin.getConfig().getString("options.music.Mode");
       if(mode.equalsIgnoreCase("MonoMode")){
         sp.setChannelMode(new MonoMode());
@@ -79,12 +89,10 @@ public class Music {
       }
       playingSong.put(player.getUniqueId(), sp);
 
-      if (plugin.getConfig().getBoolean("options.printSongTitel")) {
-        if (!sp.getSong().getTitle().isEmpty()) {
-          player.sendMessage(plugin.prefix + "§2Start Playing the Song:§a§l " + sp.getSong().getTitle());
-        } else {
-          player.sendMessage(plugin.prefix + "§2Start Playing a Song.");
-        }
+      String playingMessage = plugin.getConfig().getString("messages.playing");
+      if (!playingMessage.isEmpty() && plugin.getConfig().getBoolean("options.printSongTitel")) {
+        player.sendMessage(plugin.prefix + 
+        		playingMessage.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle()).replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");
@@ -113,8 +121,7 @@ public class Music {
       File[] files = dir.listFiles();
       if (files.length > 0) {
         Random rand = new Random();
-        File file = files[rand.nextInt(files.length)];
-        return file;
+        return files[rand.nextInt(files.length)];
       } else {
         return new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
       }
