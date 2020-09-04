@@ -6,6 +6,7 @@ import de.t0biii.music.domain.ConfigManager;
 import de.t0biii.music.domain.Music;
 import de.t0biii.music.domain.Updater;
 import de.t0biii.music.domain.Updater.ReleaseType;
+import de.t0biii.music.listener.HANDLER_Bungee;
 import de.t0biii.music.listener.HANDLER_PlayerJoin;
 import de.t0biii.music.listener.HANDLER_PlayerQuit;
 import de.t0biii.music.listener.HANDLER_SongEndEvent;
@@ -58,7 +59,11 @@ public class Main extends JavaPlugin {
       Metrics metrics = new Metrics(this, 6447);
       new bStatsCostum(this).customCharts(metrics);
     }
-    
+   // if(this.getConfig().getBoolean("options.Bungeecord")){
+     // this.getServer().getMessenger().registerOutgoingPluginChannel(this, "t0biii:joinmusic");
+      this.getServer().getMessenger().registerIncomingPluginChannel(this, "t0biii:joinmusic", new HANDLER_Bungee());
+
+    //}
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
