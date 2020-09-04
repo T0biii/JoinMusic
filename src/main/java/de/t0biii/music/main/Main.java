@@ -72,7 +72,7 @@ public class Main extends JavaPlugin {
   public void Updater() {
     if (this.getConfig().getBoolean("options.update-check")) {
       // Start Updater but just do a version check
-      updater = new Updater(this, uid, this.getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
+      updater = new Updater(this, uid, Updater.UpdateType.NO_DOWNLOAD);
       // Determine if there is an update ready for us
       update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
       name = updater.getLatestName(); // Get the latest name
