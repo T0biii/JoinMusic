@@ -32,7 +32,7 @@ public class Main extends JavaPlugin {
 
 
   public ConfigManager cm = new ConfigManager(this);
-  Logger log = Bukkit.getLogger();
+  public Logger log = Bukkit.getLogger();
   PluginManager pm = Bukkit.getPluginManager();
   public String cprefix = "[JoinMusic] ";
   public String prefix = "§7[§bJoinMusic§7]§r ";
@@ -59,11 +59,10 @@ public class Main extends JavaPlugin {
       Metrics metrics = new Metrics(this, 6447);
       new bStatsCostum(this).customCharts(metrics);
     }
-   // if(this.getConfig().getBoolean("options.Bungeecord")){
+    if(this.getConfig().getBoolean("options.bungeecord")){
      // this.getServer().getMessenger().registerOutgoingPluginChannel(this, "t0biii:joinmusic");
-      this.getServer().getMessenger().registerIncomingPluginChannel(this, "t0biii:joinmusic", new HANDLER_Bungee());
-
-    //}
+      this.getServer().getMessenger().registerIncomingPluginChannel(this, "t0biii:joinmusic", new HANDLER_Bungee(this));
+    }
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
