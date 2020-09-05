@@ -21,6 +21,7 @@ public class bStatsCostum {
         String delaySong = plugin.getConfig().getString("options.delaySong");
         String octave10  = plugin.getConfig().getString("options.music.10Octave");
         String mode = plugin.getConfig().getString("options.music.Mode", "MonoMode");
+        String bungee = plugin.getConfig().getString("options.bungeecord");
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
             @Override
@@ -97,6 +98,16 @@ public class bStatsCostum {
             public String call()  {
                 if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
                     return mode;
+                }
+                return "unknow";
+            }
+        }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("options_bungeecord", new Callable<String>() {
+            @Override
+            public String call()  {
+                if (bungee.equalsIgnoreCase("true") || bungee.equalsIgnoreCase("false")) {
+                    return bungee;
                 }
                 return "unknow";
             }
