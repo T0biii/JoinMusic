@@ -28,7 +28,6 @@ public class HANDLER_PlayerJoin implements Listener {
         @Override
         public void run() {
           Music.start(player, plugin);
-          System.out.println("[JoinMusic] - No BungeeMode");
         }
       }, 20L * delay);
     }
