@@ -20,14 +20,18 @@ public class HANDLER_PlayerJoin implements Listener {
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
-    int delay = plugin.getConfig().getInt("options.delaySong");
 
-    Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-      @Override
-      public void run() {
-        Music.start(player, plugin);
-      }
-    }, 20L * delay);
+    if(!plugin.getConfig().getBoolean("options.bungeecord")){
+      int delay = plugin.getConfig().getInt("options.delaySong");
+
+      Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+        @Override
+        public void run() {
+          Music.start(player, plugin);
+          System.out.println("[JoinMusic] - No BungeeMode");
+        }
+      }, 20L * delay);
+    }
 
     if (this.plugin.update) {
       if ((player.isOp() || player.hasPermission("JoinMusic.update"))
