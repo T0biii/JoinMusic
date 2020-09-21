@@ -24,8 +24,8 @@
     </build>
     <repositories>
         <repository>
-            <id>SpigotMC-Repo</id>
-            <url>http://repo.md-5.net/content/repositories/snapshots/</url>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>OSS-Repo</id>
