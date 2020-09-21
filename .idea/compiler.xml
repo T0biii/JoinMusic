@@ -6,11 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JoinMusic" />
+        <module name="Bungee" />
+        <module name="JoinMusic-Master" />
+        <module name="Spigot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Bungee" target="1.8" />
       <module name="JoinMusic" target="1.8" />
+      <module name="JoinMusic-Master" target="1.8" />
+      <module name="Master" target="1.8" />
+      <module name="Spigot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
