@@ -20,7 +20,7 @@ public class PlayerJoin implements Listener {
         ProxyServer.getInstance().getScheduler().schedule(plugin, new Runnable() {
             @Override
             public void run() {
-                Utils.sendCustomData(event.getPlayer(), "Join", event.getPlayer().getName());
+                Utils.sendCustomData(plugin, event.getPlayer(), "Join", event.getPlayer().getName(), true);
             }
         }, 3, TimeUnit.SECONDS);
 
