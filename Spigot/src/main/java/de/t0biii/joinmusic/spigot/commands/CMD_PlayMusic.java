@@ -106,7 +106,7 @@ public class CMD_PlayMusic implements CommandExecutor {
     @Override
     public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
       if (strings.length == 1) {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         if (commandSender.hasPermission("JoinMusic.command.reload")) {
           list.add("reload");
         }
