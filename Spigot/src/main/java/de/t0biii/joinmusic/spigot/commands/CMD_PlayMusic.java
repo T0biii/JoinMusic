@@ -49,8 +49,8 @@ public class CMD_PlayMusic implements CommandExecutor {
           } else if (args[0].equalsIgnoreCase("disable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
         		plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),true);
-        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
        		    plugin.cm.saveUserConfigs();
+                sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
         	  }else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
@@ -58,7 +58,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
         		  plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),null);
         		  plugin.cm.saveUserConfigs();
-        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
+        		  sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
         	  } else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
