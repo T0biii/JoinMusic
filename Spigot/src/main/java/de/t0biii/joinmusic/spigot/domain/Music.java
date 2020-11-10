@@ -1,4 +1,4 @@
-package de.t0biii.music.domain;
+package de.t0biii.joinmusic.spigot.domain;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ import com.xxmicloxx.NoteBlockAPI.model.Song;
 import com.xxmicloxx.NoteBlockAPI.songplayer.RadioSongPlayer;
 import com.xxmicloxx.NoteBlockAPI.songplayer.SongPlayer;
 import com.xxmicloxx.NoteBlockAPI.utils.NBSDecoder;
-import de.t0biii.music.main.Main;
+import de.t0biii.joinmusic.spigot.main.Main;
 
 public class Music {
 

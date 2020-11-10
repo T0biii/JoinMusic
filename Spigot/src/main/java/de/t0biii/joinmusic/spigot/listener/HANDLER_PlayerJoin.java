@@ -1,13 +1,13 @@
-package de.t0biii.music.listener;
+package de.t0biii.joinmusic.spigot.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import de.t0biii.music.domain.Music;
-import de.t0biii.music.domain.Updater;
-import de.t0biii.music.main.Main;
+import de.t0biii.joinmusic.spigot.domain.Music;
+import de.t0biii.joinmusic.spigot.domain.Updater;
+import de.t0biii.joinmusic.spigot.main.Main;
 
 public class HANDLER_PlayerJoin implements Listener {
 
@@ -20,14 +20,17 @@ public class HANDLER_PlayerJoin implements Listener {
   @EventHandler
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
-    int delay = plugin.getConfig().getInt("options.delaySong");
 
-    Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-      @Override
-      public void run() {
-        Music.start(player, plugin);
-      }
-    }, 20L * delay);
+    if(!plugin.getConfig().getBoolean("options.bungeecord")){
+      int delay = plugin.getConfig().getInt("options.delaySong");
+
+      Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+        @Override
+        public void run() {
+          Music.start(player, plugin);
+        }
+      }, 20L * delay);
+    }
 
     if (this.plugin.update) {
       if ((player.isOp() || player.hasPermission("JoinMusic.update"))

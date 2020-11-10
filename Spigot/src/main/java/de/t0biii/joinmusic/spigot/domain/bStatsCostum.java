@@ -1,8 +1,8 @@
-package de.t0biii.music.domain;
+package de.t0biii.joinmusic.spigot.domain;
 
 import java.util.concurrent.Callable;
 
-import de.t0biii.music.main.Main;
+import de.t0biii.joinmusic.spigot.main.Main;
 import org.bstats.bukkit.Metrics;
 
 public class bStatsCostum {
@@ -20,7 +20,8 @@ public class bStatsCostum {
         String allowDisabling = plugin.getConfig().getString("options.allowDisabling");
         String delaySong = plugin.getConfig().getString("options.delaySong");
         String octave10  = plugin.getConfig().getString("options.music.10Octave");
-        String mode = plugin.getConfig().getString("options.music.Mode", "MonoMode");
+        String mode = plugin.getConfig().getString("options.music.Mode");
+        String bungeemode = plugin.getConfig().getString("options.bungeecord");
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
             @Override
@@ -97,6 +98,16 @@ public class bStatsCostum {
             public String call()  {
                 if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
                     return mode;
+                }
+                return "unknow";
+            }
+        }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("options_bungeecord", new Callable<String>() {
+            @Override
+            public String call()  {
+                if (bungeemode.equalsIgnoreCase("true") || bungeemode.equalsIgnoreCase("false")) {
+                    return bungeemode;
                 }
                 return "unknow";
             }

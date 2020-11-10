@@ -1,4 +1,4 @@
-package de.t0biii.music.commands;
+package de.t0biii.joinmusic.spigot.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -6,8 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import de.t0biii.music.domain.Music;
-import de.t0biii.music.main.Main;
+import de.t0biii.joinmusic.spigot.domain.Music;
+import de.t0biii.joinmusic.spigot.main.Main;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -49,8 +49,8 @@ public class CMD_PlayMusic implements CommandExecutor {
           } else if (args[0].equalsIgnoreCase("disable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
         		plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),true);
-        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
        		    plugin.cm.saveUserConfigs();
+                sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
         	  }else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
@@ -58,7 +58,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
         		  plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),null);
         		  plugin.cm.saveUserConfigs();
-        		sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
+        		  sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
         	  } else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
@@ -106,7 +106,7 @@ public class CMD_PlayMusic implements CommandExecutor {
     @Override
     public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
       if (strings.length == 1) {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         if (commandSender.hasPermission("JoinMusic.command.reload")) {
           list.add("reload");
         }

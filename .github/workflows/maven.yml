@@ -21,4 +21,4 @@ jobs:
         # Artifact name
         name: JoinMusic
         # Directory containing files to upload
-        path: target/JoinMusic.jar
+        path: Master/target/JoinMusic.jar

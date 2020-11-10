@@ -1,4 +1,4 @@
-package de.t0biii.music.domain;
+package de.t0biii.joinmusic.spigot.domain;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import de.t0biii.music.main.Main;
+import de.t0biii.joinmusic.spigot.main.Main;
 
 public class ConfigManager {
 
@@ -32,6 +32,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.delaySong", 2);
     this.plugin.getConfig().addDefault("options.allowDisabling", true);
     this.plugin.getConfig().addDefault("options.metrics", true);
+    this.plugin.getConfig().addDefault("options.bungeecord", false);
     this.plugin.getConfig().addDefault("messages.reload", "&3The reload was successful!");
     this.plugin.getConfig().addDefault("messages.stop", "&3Stopped playing the song! &7&oYou can disable playing a song on join with &b&o/jm disable");
     this.plugin.getConfig().addDefault("messages.no-permission", "&cYou don't have enough permissions");

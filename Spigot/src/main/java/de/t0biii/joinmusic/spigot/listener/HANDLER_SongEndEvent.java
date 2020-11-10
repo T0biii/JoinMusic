@@ -1,8 +1,8 @@
-package de.t0biii.music.listener;
+package de.t0biii.joinmusic.spigot.listener;
 
 import com.xxmicloxx.NoteBlockAPI.event.SongEndEvent;
 import com.xxmicloxx.NoteBlockAPI.event.SongStoppedEvent;
-import de.t0biii.music.domain.Music;
+import de.t0biii.joinmusic.spigot.domain.Music;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 

@@ -1,10 +1,10 @@
-package de.t0biii.music.listener;
+package de.t0biii.joinmusic.spigot.listener;
 
+import de.t0biii.joinmusic.spigot.domain.Music;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-import de.t0biii.music.domain.Music;
 
 public class HANDLER_PlayerQuit implements Listener {
 

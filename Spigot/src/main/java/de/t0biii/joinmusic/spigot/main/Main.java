@@ -1,26 +1,27 @@
-package de.t0biii.music.main;
+package de.t0biii.joinmusic.spigot.main;
 
 import java.util.logging.Logger;
-import de.t0biii.music.commands.CMD_PlayMusic;
-import de.t0biii.music.domain.ConfigManager;
-import de.t0biii.music.domain.Music;
-import de.t0biii.music.domain.Updater;
-import de.t0biii.music.domain.Updater.ReleaseType;
-import de.t0biii.music.listener.HANDLER_PlayerJoin;
-import de.t0biii.music.listener.HANDLER_PlayerQuit;
-import de.t0biii.music.listener.HANDLER_SongEndEvent;
+
+import de.t0biii.joinmusic.spigot.commands.CMD_PlayMusic;
+import de.t0biii.joinmusic.spigot.domain.ConfigManager;
+import de.t0biii.joinmusic.spigot.domain.Music;
+import de.t0biii.joinmusic.spigot.domain.Updater;
+import de.t0biii.joinmusic.spigot.listener.HANDLER_Bungee;
+import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerJoin;
+import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerQuit;
+import de.t0biii.joinmusic.spigot.listener.HANDLER_SongEndEvent;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import de.t0biii.music.domain.bStatsCostum;
+import de.t0biii.joinmusic.spigot.domain.bStatsCostum;
 
 
 public class Main extends JavaPlugin {
 
   public boolean update = false;
   public String name = "";
-  public ReleaseType type = null;
+  public Updater.ReleaseType type = null;
   public Main instance;
   public String version = "";
   public String link = "";
@@ -31,7 +32,7 @@ public class Main extends JavaPlugin {
 
 
   public ConfigManager cm = new ConfigManager(this);
-  Logger log = Bukkit.getLogger();
+  public Logger log = Bukkit.getLogger();
   PluginManager pm = Bukkit.getPluginManager();
   public String cprefix = "[JoinMusic] ";
   public String prefix = "§7[§bJoinMusic§7]§r ";
@@ -58,7 +59,10 @@ public class Main extends JavaPlugin {
       Metrics metrics = new Metrics(this, 6447);
       new bStatsCostum(this).customCharts(metrics);
     }
-    
+    if(this.getConfig().getBoolean("options.bungeecord")){
+     // this.getServer().getMessenger().registerOutgoingPluginChannel(this, "t0biii:joinmusic");
+      this.getServer().getMessenger().registerIncomingPluginChannel(this, "t0biii:joinmusic", new HANDLER_Bungee(this));
+    }
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);

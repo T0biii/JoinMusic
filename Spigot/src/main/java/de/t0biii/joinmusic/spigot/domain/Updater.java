@@ -1,4 +1,4 @@
-package de.t0biii.music.domain;
+package de.t0biii.joinmusic.spigot.domain;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;

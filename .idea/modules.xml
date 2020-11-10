@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Bungee/Bungee.iml" filepath="$PROJECT_DIR$/Bungee/Bungee.iml" />
       <module fileurl="file://$PROJECT_DIR$/JoinMusic.iml" filepath="$PROJECT_DIR$/JoinMusic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Master/JoinMusic-Master.iml" filepath="$PROJECT_DIR$/Master/JoinMusic-Master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spigot/Spigot.iml" filepath="$PROJECT_DIR$/Spigot/Spigot.iml" />
     </modules>
   </component>
 </project>
