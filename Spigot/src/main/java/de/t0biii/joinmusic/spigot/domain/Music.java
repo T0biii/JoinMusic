@@ -93,7 +93,7 @@ public class Music {
       playingSong.put(player.getUniqueId(), sp);
 
       String playingMessage = plugin.getConfig().getString("messages.playing");
-      playingMessage = replace(player, playingMessage);
+      playingMessage = replacePlaceholders(player, playingMessage);
 
       if (!playingMessage.isEmpty() && plugin.getConfig().getBoolean("options.printSongTitel")) {
         player.sendMessage(plugin.prefix + playingMessage.replaceAll("&", "§"));
@@ -133,7 +133,7 @@ public class Music {
     return null;
   }
 
-  private static String replace(Player p, String string){
+  private static String replacePlaceholders(Player p, String string){
     SongPlayer sp = Music.playingSong.get(p.getUniqueId());
     string = string.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle());
     if(Main.placeholderProvided){
