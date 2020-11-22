@@ -73,7 +73,11 @@ public class Main extends JavaPlugin {
     getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
     getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
 
-    log.info(cprefix + "Enabled!");
+    if(this.getConfig().getBoolean("options.bungeecord")){
+      log.info(cprefix + "Enabled in BungeeMode!");
+    }else{
+      log.info(cprefix + "Enabled!");
+    }
   }
 
   public void Updater() {
