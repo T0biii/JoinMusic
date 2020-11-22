@@ -5,10 +5,10 @@ import java.util.concurrent.Callable;
 import de.t0biii.joinmusic.spigot.main.Main;
 import org.bstats.bukkit.Metrics;
 
-public class bStatsCostum {
+public class bStatsCustom {
     private Main plugin;
 
-    public bStatsCostum(Main plugin) {
+    public bStatsCustom(Main plugin) {
         this.plugin = plugin;
     }
 

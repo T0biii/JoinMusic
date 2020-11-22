@@ -9,6 +9,7 @@ import java.util.UUID;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoStereoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.StereoMode;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import com.google.common.io.Files;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
@@ -19,7 +20,7 @@ import de.t0biii.joinmusic.spigot.main.Main;
 
 public class Music {
 
-  private static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
+  public static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
   public static void start(Player player, Main plugin){
 	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
@@ -61,6 +62,8 @@ public class Music {
     }
   }
 
+
+
   private static void playSong(Player player, Main plugin) {
     try {
       File songFile;
@@ -90,9 +93,10 @@ public class Music {
       playingSong.put(player.getUniqueId(), sp);
 
       String playingMessage = plugin.getConfig().getString("messages.playing");
+      playingMessage = replacePlaceholders(player, playingMessage);
+
       if (!playingMessage.isEmpty() && plugin.getConfig().getBoolean("options.printSongTitel")) {
-        player.sendMessage(plugin.prefix + 
-        		playingMessage.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle()).replaceAll("&", "§"));
+        player.sendMessage(plugin.prefix + playingMessage.replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
       System.err.println(plugin.cprefix + "No sounds detected");
@@ -127,5 +131,14 @@ public class Music {
       }
     }
     return null;
+  }
+
+  private static String replacePlaceholders(Player p, String string){
+    SongPlayer sp = Music.playingSong.get(p.getUniqueId());
+    string = string.replaceAll("%song%",sp.getSong().getTitle().isEmpty() ? "Untitled" : sp.getSong().getTitle());
+    if(Main.placeholderProvided){
+      string = PlaceholderAPI.setPlaceholders(p, string);
+    }
+    return string;
   }
 }

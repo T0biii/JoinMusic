@@ -1,6 +1,7 @@
-package de.t0biii.joinmusic.bungee;
+package de.t0biii.joinmusic.bungee.domain;
 
 
+import de.t0biii.joinmusic.bungee.JoinMusicBungee;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
@@ -13,14 +14,14 @@ public class ConfigManager {
     private JoinMusicBungee plugin;
     public ConfigManager(JoinMusicBungee plugin){
         this.plugin = plugin;
-        load();
     }
 
-    public void load(){
+    private void load(){
         try{
             File file = getFile();
             Configuration config = getConfig(file);
             config.set("metrics", true);
+            config.set("delay", 3);
             ConfigurationProvider.getProvider(YamlConfiguration.class).save(config, file);
 
         }catch (IOException ex){
@@ -48,6 +49,7 @@ public class ConfigManager {
         File file = new File(plugin.getDataFolder().getPath(), "config.yml");
         if(!file.exists()){
             file.createNewFile();
+            load();
         }
         return file;
     }

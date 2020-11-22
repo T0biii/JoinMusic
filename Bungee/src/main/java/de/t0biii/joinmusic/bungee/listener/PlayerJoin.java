@@ -1,5 +1,7 @@
-package de.t0biii.joinmusic.bungee;
+package de.t0biii.joinmusic.bungee.listener;
 
+import de.t0biii.joinmusic.bungee.JoinMusicBungee;
+import de.t0biii.joinmusic.bungee.domain.Utils;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
@@ -22,7 +24,7 @@ public class PlayerJoin implements Listener {
             public void run() {
                 Utils.sendCustomData(plugin, event.getPlayer(), "Join", event.getPlayer().getName(), true);
             }
-        }, 3, TimeUnit.SECONDS);
+        }, plugin.dealy, TimeUnit.SECONDS);
 
     }
 

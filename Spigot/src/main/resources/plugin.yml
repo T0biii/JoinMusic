@@ -5,6 +5,8 @@ authors:
   - altrisi
 depend:
   - NoteBlockAPI
+softdepend:
+  - PlaceholderAPI
 version: ${project.version}
 website: http://dev.bukkit.org/bukkit-plugins/joinmusik
 main: de.t0biii.joinmusic.spigot.main.Main
