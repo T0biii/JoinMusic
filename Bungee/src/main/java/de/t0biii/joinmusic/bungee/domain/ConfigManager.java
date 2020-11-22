@@ -14,10 +14,9 @@ public class ConfigManager {
     private JoinMusicBungee plugin;
     public ConfigManager(JoinMusicBungee plugin){
         this.plugin = plugin;
-        load();
     }
 
-    public void load(){
+    private void load(){
         try{
             File file = getFile();
             Configuration config = getConfig(file);
@@ -50,6 +49,7 @@ public class ConfigManager {
         File file = new File(plugin.getDataFolder().getPath(), "config.yml");
         if(!file.exists()){
             file.createNewFile();
+            load();
         }
         return file;
     }
