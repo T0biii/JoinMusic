@@ -1,6 +1,7 @@
-package de.t0biii.joinmusic.bungee;
+package de.t0biii.joinmusic.bungee.domain;
 
 
+import de.t0biii.joinmusic.bungee.JoinMusicBungee;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
@@ -21,6 +22,7 @@ public class ConfigManager {
             File file = getFile();
             Configuration config = getConfig(file);
             config.set("metrics", true);
+            config.set("delay", 3);
             ConfigurationProvider.getProvider(YamlConfiguration.class).save(config, file);
 
         }catch (IOException ex){
