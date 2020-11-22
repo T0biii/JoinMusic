@@ -27,7 +27,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         Player player = ((Player) sender).getPlayer();
         String noperm = plugin.getConfig().getString("messages.no-permission").replaceAll("&", "§");
         if (args.length == 1) {
-          if (args[0].equalsIgnoreCase("reload")) {
+          if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
             if (sender.hasPermission("JoinMusic.command.reload")) {
               try {
                 plugin.cm.reloadConfigs();

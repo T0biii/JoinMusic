@@ -3,9 +3,7 @@ package de.t0biii.joinmusic.spigot.main;
 import java.util.logging.Logger;
 
 import de.t0biii.joinmusic.spigot.commands.CMD_PlayMusic;
-import de.t0biii.joinmusic.spigot.domain.ConfigManager;
-import de.t0biii.joinmusic.spigot.domain.Music;
-import de.t0biii.joinmusic.spigot.domain.Updater;
+import de.t0biii.joinmusic.spigot.domain.*;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_Bungee;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerJoin;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerQuit;
@@ -14,12 +12,12 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import de.t0biii.joinmusic.spigot.domain.bStatsCostum;
 
 
 public class Main extends JavaPlugin {
 
   public boolean update = false;
+  public static boolean placeholderProvided = false;
   public String name = "";
   public Updater.ReleaseType type = null;
   public Main instance;
@@ -28,8 +26,6 @@ public class Main extends JavaPlugin {
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
   private int uid = 83541;
   public Updater updater;
-  
-
 
   public ConfigManager cm = new ConfigManager(this);
   public Logger log = Bukkit.getLogger();
@@ -39,7 +35,7 @@ public class Main extends JavaPlugin {
 
   @Override
   public void onEnable() {
-    if (pm.getPlugin("NoteBlockAPI").isEnabled()) {
+    if (pm.isPluginEnabled("NoteBlockAPI")) {
       log.info(cprefix + "Successfully hooked into: NoteBlockAPI");
     } else {
       log.info(cprefix + "The plugin NoteBlockAPI could not be found!");
@@ -47,7 +43,14 @@ public class Main extends JavaPlugin {
       log.info(cprefix + "Disabled!");
       return;
     }
-    
+
+
+    if (pm.isPluginEnabled("PlaceholderAPI")) {
+      new PlaceholderCustom().register();
+      placeholderProvided = true;
+      log.info(cprefix + "Successfully hooked into: PlaceholderAPI");
+    }
+
     cm.loadConfig();
     saveConfig();
     cm.loadUserConfigsIfNeeded();
@@ -57,7 +60,7 @@ public class Main extends JavaPlugin {
 
     if (this.getConfig().getBoolean("options.metrics")) {
       Metrics metrics = new Metrics(this, 6447);
-      new bStatsCostum(this).customCharts(metrics);
+      new bStatsCustom(this).customCharts(metrics);
     }
     if(this.getConfig().getBoolean("options.bungeecord")){
      // this.getServer().getMessenger().registerOutgoingPluginChannel(this, "t0biii:joinmusic");
@@ -70,7 +73,11 @@ public class Main extends JavaPlugin {
     getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
     getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
 
-    log.info(cprefix + "Enabled!");
+    if(this.getConfig().getBoolean("options.bungeecord")){
+      log.info(cprefix + "Enabled in BungeeMode!");
+    }else{
+      log.info(cprefix + "Enabled!");
+    }
   }
 
   public void Updater() {

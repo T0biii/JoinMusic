@@ -1,7 +1,8 @@
-package de.t0biii.joinmusic.bungee;
+package de.t0biii.joinmusic.bungee.domain;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import de.t0biii.joinmusic.bungee.JoinMusicBungee;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
