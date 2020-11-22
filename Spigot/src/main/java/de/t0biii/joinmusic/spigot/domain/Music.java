@@ -9,6 +9,7 @@ import java.util.UUID;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoStereoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.StereoMode;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import com.google.common.io.Files;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
@@ -60,6 +61,8 @@ public class Music {
       playingSong.remove(uuid);
     }
   }
+
+
 
   private static void playSong(Player player, Main plugin) {
     try {
