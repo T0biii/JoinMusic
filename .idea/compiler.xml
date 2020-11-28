@@ -9,6 +9,7 @@
         <module name="JoinMusic-Master" />
         <module name="JoinMusic-Bungee" />
         <module name="JoinMusic-Spigot" />
+        <module name="Velocity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="JoinMusic-Spigot" target="1.8" />
       <module name="Master" target="1.8" />
       <module name="Spigot" target="1.8" />
+      <module name="Velocity" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -43,10 +43,15 @@
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
+        <repository>
+            <id>velocity</id>
+            <url>https://repo.velocitypowered.com/snapshots/</url>
+        </repository>
     </repositories>
     <modules>
         <module>Spigot</module>
         <module>Bungee</module>
         <module>Master</module>
+        <module>Velocity</module>
     </modules>
 </project>

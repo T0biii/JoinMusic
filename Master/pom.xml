@@ -17,6 +17,11 @@
             <artifactId>JoinMusic-Bungee</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>de.t0biii</groupId>
+            <artifactId>JoinMusic-Velocity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>JoinMusic</finalName>
@@ -45,6 +50,7 @@
                         <includes>
                             <include>de.t0biii:JoinMusic-Spigot</include>
                             <include>de.t0biii:JoinMusic-Bungee</include>
+                            <include>de.t0biii:JoinMusic-Velocity</include>
                         </includes>
                     </artifactSet>
                 </configuration>
