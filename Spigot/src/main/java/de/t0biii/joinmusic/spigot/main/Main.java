@@ -18,6 +18,8 @@ public class Main extends JavaPlugin {
 
   public boolean update = false;
   public static boolean placeholderProvided = false;
+  public String noteblockAPIVersion = "";
+  public String placeholderAPIVersion = "";
   public String name = "";
   public Updater.ReleaseType type = null;
   public Main instance;
@@ -36,6 +38,7 @@ public class Main extends JavaPlugin {
   @Override
   public void onEnable() {
     if (pm.isPluginEnabled("NoteBlockAPI")) {
+      noteblockAPIVersion = pm.getPlugin("NoteBlockAPI").getDescription().getVersion();
       log.info(cprefix + "Successfully hooked into: NoteBlockAPI");
     } else {
       log.info(cprefix + "The plugin NoteBlockAPI could not be found!");
@@ -48,6 +51,7 @@ public class Main extends JavaPlugin {
     if (pm.isPluginEnabled("PlaceholderAPI")) {
       new PlaceholderCustom().register();
       placeholderProvided = true;
+      placeholderAPIVersion = pm.getPlugin("PlaceholderAPI").getDescription().getVersion();
       log.info(cprefix + "Successfully hooked into: PlaceholderAPI");
     }
 
