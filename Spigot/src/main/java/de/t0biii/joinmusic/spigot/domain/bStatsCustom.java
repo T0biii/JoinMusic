@@ -22,6 +22,8 @@ public class bStatsCustom {
         String octave10  = plugin.getConfig().getString("options.music.10Octave");
         String mode = plugin.getConfig().getString("options.music.Mode");
         String bungeemode = plugin.getConfig().getString("options.bungeecord");
+        String noteblockAPIVersion = plugin.noteblockAPIVersion;
+        String placeholderAPIVersion = plugin.placeholderAPIVersion;
 
         bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
             @Override
@@ -112,5 +114,26 @@ public class bStatsCustom {
                 return "unknow";
             }
         }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("version_noteblockapi", new Callable<String>() {
+            @Override
+            public String call()  {
+                if (!noteblockAPIVersion.isEmpty()) {
+                    return noteblockAPIVersion;
+                }
+                return "unknow";
+            }
+        }));
+
+        bstats.addCustomChart(new Metrics.SimplePie("version_placeholderAPI", new Callable<String>() {
+            @Override
+            public String call()  {
+                if (!placeholderAPIVersion.isEmpty()) {
+                    return placeholderAPIVersion;
+                }
+                return "unknow";
+            }
+        }));
+
     }
 }
