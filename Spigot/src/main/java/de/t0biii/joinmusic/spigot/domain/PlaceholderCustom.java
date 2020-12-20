@@ -57,11 +57,9 @@ public class PlaceholderCustom extends PlaceholderExpansion {
             case "description":
                 return  sp.getSong().getDescription().isEmpty() ? "Unknown" : sp.getSong().getDescription();
             default:
+                // We return null if an invalid placeholder was provided
+                return null;
         }
-
-
-        // We return null if an invalid placeholder was provided
-        return null;
     }
 
 }
