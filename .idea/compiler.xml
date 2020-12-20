@@ -10,7 +10,6 @@
         <module name="JoinMusic-Bungee" />
         <module name="JoinMusic-Velocity" />
         <module name="JoinMusic-Spigot" />
-        <module name="Velocity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
