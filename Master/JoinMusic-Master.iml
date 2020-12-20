@@ -18,6 +18,6 @@
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="module" module-name="JoinMusic-Bungee" />
     <orderEntry type="library" name="Maven: org.bstats:bstats-bungeecord:1.7" level="project" />
-    <orderEntry type="module" module-name="Velocity" />
+    <orderEntry type="module" module-name="JoinMusic-Velocity" />
   </component>
 </module>
