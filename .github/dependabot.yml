@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "daily"
     target-branch: "dev"
-    reviewers: 
+    reviewers:
       - "T0biii"
     assignees:
       - "T0biii"
