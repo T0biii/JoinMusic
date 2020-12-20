@@ -14,12 +14,12 @@ public class bStatsCustom {
     }
 
     public void customCharts(Metrics bstats) {
-        String delay = plugin.cm.getConfig().getString("delay");
+        int delay = plugin.cm.getConfig().getInt("delay");
 
         bstats.addCustomChart(new Metrics.SimplePie("options_delay", new Callable<String>() {
             @Override
             public String call()  {
-                return delay;
+                return String.valueOf(delay);
             }
         }));
 
