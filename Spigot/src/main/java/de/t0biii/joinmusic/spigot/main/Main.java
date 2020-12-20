@@ -22,7 +22,6 @@ public class Main extends JavaPlugin {
   public String placeholderAPIVersion = "";
   public String name = "";
   public Updater.ReleaseType type = null;
-  public Main instance;
   public String version = "";
   public String link = "";
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
