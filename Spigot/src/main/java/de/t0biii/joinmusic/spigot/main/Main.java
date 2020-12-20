@@ -57,7 +57,6 @@ public class Main extends JavaPlugin {
     cm.loadConfig();
     saveConfig();
     cm.loadUserConfigsIfNeeded();
-    prefix = this.getConfig().getString("messages.prefix").replaceAll("&", "§") + "§r ";
 
     Updater();
     Music.createRandomFileDir(this);
