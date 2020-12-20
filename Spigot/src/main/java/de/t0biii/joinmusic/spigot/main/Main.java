@@ -33,7 +33,7 @@ public class Main extends JavaPlugin {
   public Logger log = Bukkit.getLogger();
   PluginManager pm = Bukkit.getPluginManager();
   public String cprefix = "[JoinMusic] ";
-  public String prefix = "§7[§bJoinMusic§7]§r ";
+  public String prefix;
 
   @Override
   public void onEnable() {
@@ -58,7 +58,8 @@ public class Main extends JavaPlugin {
     cm.loadConfig();
     saveConfig();
     cm.loadUserConfigsIfNeeded();
-    
+    prefix = this.getConfig().getString("messages.prefix").replaceAll("&", "§") + "§r ";
+
     Updater();
     Music.createRandomFileDir(this);
 
