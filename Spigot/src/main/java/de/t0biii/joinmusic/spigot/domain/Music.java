@@ -114,6 +114,7 @@ public class Music {
       try {
         Files.copy(songFile, copyDir);
       } catch (IOException e) {
+        e.printStackTrace();
       }
     }
   }
