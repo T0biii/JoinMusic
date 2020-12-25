@@ -77,6 +77,13 @@ public class Music {
       final RadioSongPlayer sp = new RadioSongPlayer(s);
       sp.addPlayer(player);
       sp.setPlaying(true);
+      int volume = plugin.getConfig().getInt("options.music.Volume");
+      if(volume >= 0 && volume <= 100){
+        sp.setVolume((byte) volume);
+      }else{
+        plugin.log.warning(plugin.cprefix + "ERROR: Volume must be between 0-100 (Your Value: " + volume + ")");
+      }
+
       if(plugin.getConfig().getBoolean("options.music.10Octave")){
         sp.setEnable10Octave(true);
       }
