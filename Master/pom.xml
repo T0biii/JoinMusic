@@ -10,12 +10,12 @@
         <dependency>
             <groupId>de.t0biii</groupId>
             <artifactId>JoinMusic-Spigot</artifactId>
-            <version>6.1</version>
+            <version>6.2</version>
         </dependency>
         <dependency>
             <groupId>de.t0biii</groupId>
             <artifactId>JoinMusic-Bungee</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
     </dependencies>
     <build>
