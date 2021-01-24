@@ -1,5 +1,5 @@
-name: JoinMusicBungee
+name: ${project.name}
 author: T0biii
 version: ${project.version}
 main: de.t0biii.joinmusic.bungee.JoinMusicBungee
-description: Bugnee Plugin for JoinMusic
+description: ${project.version}
