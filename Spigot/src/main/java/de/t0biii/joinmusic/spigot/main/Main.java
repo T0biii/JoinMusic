@@ -38,6 +38,12 @@ public class Main extends JavaPlugin {
   public void onEnable() {
     if (pm.isPluginEnabled("NoteBlockAPI")) {
       noteblockAPIVersion = pm.getPlugin("NoteBlockAPI").getDescription().getVersion();
+      if(noteblockAPIVersion.equalsIgnoreCase("1.6.1-SNAPSHOT")){
+        log.warning(cprefix + "This Plugin dont work with NoteblockAPI Version 1.6.1");
+        log.warning(cprefix + "Use Version 1.6.1.1 or newer");
+        pm.disablePlugin(this);
+        return;
+      }
       log.info(cprefix + "Successfully hooked into: NoteBlockAPI");
     } else {
       log.info(cprefix + "The plugin NoteBlockAPI could not be found!");
