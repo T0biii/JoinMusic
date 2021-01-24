@@ -2,4 +2,4 @@ name: ${project.name}
 author: T0biii
 version: ${project.version}
 main: de.t0biii.joinmusic.bungee.JoinMusicBungee
-description: ${project.version}
+description: ${project.description}
