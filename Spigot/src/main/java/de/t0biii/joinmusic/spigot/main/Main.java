@@ -22,7 +22,6 @@ public class Main extends JavaPlugin {
   public String placeholderAPIVersion = "";
   public String name = "";
   public Updater.ReleaseType type = null;
-  public Main instance;
   public String version = "";
   public String link = "";
   public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
@@ -33,7 +32,7 @@ public class Main extends JavaPlugin {
   public Logger log = Bukkit.getLogger();
   PluginManager pm = Bukkit.getPluginManager();
   public String cprefix = "[JoinMusic] ";
-  public String prefix = "§7[§bJoinMusic§7]§r ";
+  public String prefix;
 
   @Override
   public void onEnable() {
@@ -58,7 +57,7 @@ public class Main extends JavaPlugin {
     cm.loadConfig();
     saveConfig();
     cm.loadUserConfigsIfNeeded();
-    
+
     Updater();
     Music.createRandomFileDir(this);
 

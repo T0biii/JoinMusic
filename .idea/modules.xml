@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/Bungee/JoinMusic-Bungee.iml" filepath="$PROJECT_DIR$/Bungee/JoinMusic-Bungee.iml" />
       <module fileurl="file://$PROJECT_DIR$/Master/JoinMusic-Master.iml" filepath="$PROJECT_DIR$/Master/JoinMusic-Master.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spigot/JoinMusic-Spigot.iml" filepath="$PROJECT_DIR$/Spigot/JoinMusic-Spigot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Velocity/JoinMusic-Velocity.iml" filepath="$PROJECT_DIR$/Velocity/JoinMusic-Velocity.iml" />
     </modules>
   </component>
 </project>

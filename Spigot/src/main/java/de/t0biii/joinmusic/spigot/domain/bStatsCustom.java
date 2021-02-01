@@ -4,6 +4,7 @@ import java.util.concurrent.Callable;
 
 import de.t0biii.joinmusic.spigot.main.Main;
 import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 
 public class bStatsCustom {
     private Main plugin;
@@ -25,7 +26,7 @@ public class bStatsCustom {
         String noteblockAPIVersion = plugin.noteblockAPIVersion;
         String placeholderAPIVersion = plugin.placeholderAPIVersion;
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_music_random", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_music_random", new Callable<String>() {
             @Override
             public String call()  {
                 if (random.equalsIgnoreCase("true") || random.equalsIgnoreCase("false")) {
@@ -35,7 +36,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_update-check", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_update-check", new Callable<String>() {
             @Override
             public String call()  {
                 if (updateCheck.equalsIgnoreCase("true") || updateCheck.equalsIgnoreCase("false")) {
@@ -45,7 +46,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_updateinfo", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_updateinfo", new Callable<String>() {
             @Override
             public String call()  {
                 if (updateinfo.equalsIgnoreCase("true") || updateinfo.equalsIgnoreCase("false")) {
@@ -55,7 +56,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_printSongTitel", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_printSongTitel", new Callable<String>() {
             @Override
             public String call()  {
                 if (printSongTitel.equalsIgnoreCase("true") || printSongTitel.equalsIgnoreCase("false")) {
@@ -65,7 +66,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_delaySong", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_delaySong", new Callable<String>() {
             @Override
             public String call()  {
                 if (delaySong != null) {
@@ -75,7 +76,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_allowDisabling", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_allowDisabling", new Callable<String>() {
             @Override
             public String call()  {
                 if (allowDisabling.equalsIgnoreCase("true") || allowDisabling.equalsIgnoreCase("false")) {
@@ -85,7 +86,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_music_10Octave", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_music_10Octave", new Callable<String>() {
             @Override
             public String call()  {
                 if (octave10.equalsIgnoreCase("true") || octave10.equalsIgnoreCase("false")) {
@@ -95,7 +96,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_music_Mode", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_music_Mode", new Callable<String>() {
             @Override
             public String call()  {
                 if (mode.equalsIgnoreCase("MonoMode") || mode.equalsIgnoreCase("MonoStereoMode") || mode.equalsIgnoreCase("StereoMode")) {
@@ -105,7 +106,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("options_bungeecord", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("options_bungeecord", new Callable<String>() {
             @Override
             public String call()  {
                 if (bungeemode.equalsIgnoreCase("true") || bungeemode.equalsIgnoreCase("false")) {
@@ -115,7 +116,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("version_noteblockapi", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("version_noteblockapi", new Callable<String>() {
             @Override
             public String call()  {
                 if (!noteblockAPIVersion.isEmpty()) {
@@ -125,7 +126,7 @@ public class bStatsCustom {
             }
         }));
 
-        bstats.addCustomChart(new Metrics.SimplePie("version_placeholderAPI", new Callable<String>() {
+        bstats.addCustomChart(new SimplePie("version_placeholderAPI", new Callable<String>() {
             @Override
             public String call()  {
                 if (!placeholderAPIVersion.isEmpty()) {

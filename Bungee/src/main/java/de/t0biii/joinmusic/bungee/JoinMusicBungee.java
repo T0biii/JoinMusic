@@ -16,12 +16,11 @@ public final class JoinMusicBungee extends Plugin  {
         getProxy().registerChannel( "JoinMusic" );
         getProxy().getPluginManager().registerListener(this, new PlayerJoin(this));
         dealy = cm.getConfig().getInt("delay");
+
         if(cm.getConfig().getBoolean("metrics")){
-            int pluginId = 8760;
-            Metrics metrics = new Metrics(this, pluginId);
+            Metrics metrics = new Metrics(this, 8760);
             new bStatsCustom(this).customCharts(metrics);
         }
-
 
         getLogger().info( "Plugin enabled!" );
     }

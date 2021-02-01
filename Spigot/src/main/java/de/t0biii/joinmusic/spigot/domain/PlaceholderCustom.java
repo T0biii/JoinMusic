@@ -56,11 +56,12 @@ public class PlaceholderCustom extends PlaceholderExpansion {
             // %joinmusic_description%
             case "description":
                 return  sp.getSong().getDescription().isEmpty() ? "Unknown" : sp.getSong().getDescription();
+            case "prefix":
+                return "JoinMusic";
+            default:
+                // We return null if an invalid placeholder was provided
+                return null;
         }
-
-
-        // We return null if an invalid placeholder was provided
-        return null;
     }
 
 }

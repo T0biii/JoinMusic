@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JoinMusic-Master" />
         <module name="JoinMusic-Bungee" />
-        <module name="JoinMusic-Velocity" />
         <module name="JoinMusic-Spigot" />
       </profile>
     </annotationProcessing>
@@ -18,10 +17,8 @@
       <module name="JoinMusic-Bungee" target="1.8" />
       <module name="JoinMusic-Master" target="1.8" />
       <module name="JoinMusic-Spigot" target="1.8" />
-      <module name="JoinMusic-Velocity" target="1.8" />
       <module name="Master" target="1.8" />
       <module name="Spigot" target="1.8" />
-      <module name="Velocity" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
