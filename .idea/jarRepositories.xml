@@ -22,6 +22,11 @@
       <option name="url" value="http://repo.md-5.net/content/repositories/snapshots/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="velocity" />
+      <option name="name" value="velocity" />
+      <option name="url" value="https://repo.velocitypowered.com/snapshots/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="spigotmc-repo" />
       <option name="name" value="spigotmc-repo" />
       <option name="url" value="https://hub.spigotmc.org/nexus/content/repositories/snapshots/" />

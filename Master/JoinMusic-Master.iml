@@ -21,5 +21,6 @@
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="module" module-name="JoinMusic-Bungee" />
     <orderEntry type="library" name="Maven: org.bstats:bstats-bungeecord:2.1.0" level="project" />
+    <orderEntry type="module" module-name="JoinMusic-Velocity" />
   </component>
 </module>
