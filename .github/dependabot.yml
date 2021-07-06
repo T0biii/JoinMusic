@@ -14,3 +14,14 @@ updates:
       - "T0biii"
     assignees:
       - "T0biii"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every weekday
+      interval: "daily"
+    target-branch: "dev"
+    reviewers:
+      - "T0biii"
+    assignees:
+      - "T0biii"
