@@ -22,7 +22,10 @@ public class HANDLER_PlayerChangeWorld implements Listener {
         if(plugin.getConfig().getBoolean("options.music.OneWorldonly")){
             if(!player.getWorld().getName().equalsIgnoreCase(plugin.getConfig().getString("options.music.Worldname"))) {
                 Music.stop(player);
+            }else{
+                Music.start(player, plugin);
             }
+
         }
     }
 }
