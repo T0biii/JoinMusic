@@ -27,6 +27,8 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("options.music.Mode", "MonoMode");
     this.plugin.getConfig().addDefault("options.music.10Octave", false);
     this.plugin.getConfig().addDefault("options.music.Volume", 100);
+    this.plugin.getConfig().addDefault("options.music.OneWorldonly", false);
+    this.plugin.getConfig().addDefault("options.music.Worldname", "world");
     this.plugin.getConfig().addDefault("options.update-check", true);
     this.plugin.getConfig().addDefault("options.updateinfo", true);
     this.plugin.getConfig().addDefault("options.printSongTitel", true);
