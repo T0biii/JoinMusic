@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import de.t0biii.joinmusic.spigot.commands.CMD_PlayMusic;
 import de.t0biii.joinmusic.spigot.domain.*;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_Bungee;
+import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerChangeWorld;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerJoin;
 import de.t0biii.joinmusic.spigot.listener.HANDLER_PlayerQuit;
 import org.bstats.bukkit.Metrics;
@@ -76,6 +77,7 @@ public class Main extends JavaPlugin {
 
     pm.registerEvents(new HANDLER_PlayerJoin(this), this);
     pm.registerEvents(new HANDLER_PlayerQuit(), this);
+    pm.registerEvents(new HANDLER_PlayerChangeWorld(this), this);
     getCommand("JoinMusic").setExecutor(new CMD_PlayMusic(this));
     getCommand("JoinMusic").setTabCompleter(CMD_PlayMusic.tabCompleter);
 

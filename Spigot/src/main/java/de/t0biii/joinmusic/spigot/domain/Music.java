@@ -28,6 +28,11 @@ public class Music {
 			return;
 		}
 	}
+	if(plugin.getConfig().getBoolean("options.music.OneWorldonly")){
+	  if(!player.getWorld().getName().equalsIgnoreCase(plugin.getConfig().getString("options.music.Worldname"))){
+	    return;
+      }
+    }
     play(player, plugin);
   }
 
@@ -149,4 +154,5 @@ public class Music {
     }
     return string;
   }
+
 }
