@@ -23,6 +23,7 @@ public class HANDLER_SongEndEvent implements Listener {
         if(allowLooping){
             Set<UUID> uuids = event.getSongPlayer().getPlayerUUIDs();
             for(UUID uuid : uuids){
+                Music.stop(uuid);
                 Music.start(uuid, plugin);
             }
         }
