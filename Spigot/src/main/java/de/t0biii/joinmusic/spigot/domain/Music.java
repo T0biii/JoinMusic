@@ -10,6 +10,7 @@ import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoStereoMode;
 import com.xxmicloxx.NoteBlockAPI.model.playmode.StereoMode;
 import me.clip.placeholderapi.PlaceholderAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import com.google.common.io.Files;
 import com.xxmicloxx.NoteBlockAPI.model.Song;
@@ -34,6 +35,11 @@ public class Music {
       }
     }
     play(player, plugin);
+  }
+
+  public static void start(UUID uuid, Main plugin){
+    Player p = Bukkit.getPlayer(uuid);
+    start(p,plugin);
   }
 
   public static void stop(Player player) {
