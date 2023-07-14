@@ -5,4 +5,6 @@ https://dev.bukkit.org/projects/joinmusik
 
 https://www.spigotmc.org/resources/joinmusic.78169/
 
+https://hangar.papermc.io/T0biii/JoinMusic
+
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qKskYDBAMW)
