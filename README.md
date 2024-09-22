@@ -7,4 +7,6 @@ https://www.spigotmc.org/resources/joinmusic.78169/
 
 https://hangar.papermc.io/T0biii/JoinMusic
 
+https://modrinth.com/plugin/joinmusic
+
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qKskYDBAMW)
