@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    target-branch: "dev"
+    target-branch: "main"
     reviewers:
       - "T0biii"
     assignees:
@@ -20,7 +20,7 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
-    target-branch: "dev"
+    target-branch: "main"
     reviewers:
       - "T0biii"
     assignees:
