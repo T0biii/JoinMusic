@@ -82,8 +82,11 @@ messages:
 ```
 
 ## Befehle
-- `/joinmusic` oder `/jm` - Zeigt Hilfe an
+- `/joinmusic` oder `/jm` - Zeigt die Hilfe mit verfügbaren Befehlen an
 - `/joinmusic reload` - Lädt die Konfiguration neu
+- `/joinmusic stop` - Stoppt die aktuell spielende Musik
+- `/joinmusic disable` - Deaktiviert die automatische Musikwiedergabe beim Betreten des Servers
+- `/joinmusic enable` - Aktiviert die automatische Musikwiedergabe beim Betreten des Servers
 
 ## Berechtigungen
 - `JoinMusic.use` - Erlaubt die Verwendung des /joinmusic-Befehls
@@ -91,8 +94,6 @@ messages:
 - `JoinMusic.stop` - Erlaubt die Verwendung von /joinmusic stop
 - `JoinMusic.reload` - Erlaubt die Verwendung von /joinmusic reload
 - `JoinMusic.update` - Erhält Update-Benachrichtigungen
-- `JoinMusic.play.other` - Erlaubt das Abspielen von Musik für andere Spieler
-- `JoinMusic.stop.other` - Erlaubt das Stoppen von Musik für andere Spieler
 
 ## PlaceholderAPI
 JoinMusic unterstützt die folgenden PlaceholderAPI-Platzhalter:
