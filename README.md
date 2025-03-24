@@ -83,8 +83,6 @@ messages:
 
 ## Befehle
 - `/joinmusic` oder `/jm` - Zeigt Hilfe an
-- `/joinmusic play [Spieler]` - Spielt die Musik für dich oder einen anderen Spieler ab
-- `/joinmusic stop [Spieler]` - Stoppt die Musik für dich oder einen anderen Spieler
 - `/joinmusic reload` - Lädt die Konfiguration neu
 
 ## Berechtigungen
