@@ -91,8 +91,9 @@ messages:
 ## Berechtigungen
 - `JoinMusic.use` - Erlaubt die Verwendung des /joinmusic-Befehls
 - `JoinMusic.play` - Erlaubt die Verwendung von /joinmusic play
-- `JoinMusic.stop` - Erlaubt die Verwendung von /joinmusic stop
-- `JoinMusic.reload` - Erlaubt die Verwendung von /joinmusic reload
+- `JoinMusic.command.stop` - Erlaubt die Verwendung von /joinmusic stop
+- `JoinMusic.command.reload` - Erlaubt die Verwendung von /joinmusic reload
+- `JoinMusic.command.disableOwn` - Erlaubt die Verwendung von /joinmusic disable and /jm enable
 - `JoinMusic.update` - Erhält Update-Benachrichtigungen
 
 ## PlaceholderAPI
