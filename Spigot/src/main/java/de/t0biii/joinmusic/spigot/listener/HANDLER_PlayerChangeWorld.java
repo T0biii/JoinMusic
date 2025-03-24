@@ -7,25 +7,30 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 
-
 public class HANDLER_PlayerChangeWorld implements Listener {
 
-    Main plugin;
+    private final Main plugin;
 
     public HANDLER_PlayerChangeWorld(Main plugin) {
         this.plugin = plugin;
     }
+    
     @EventHandler
     public void onWorldChange(PlayerChangedWorldEvent event) {
         final Player player = event.getPlayer();
-
-        if(plugin.getConfig().getBoolean("options.music.OneWorldonly")){
-            if(!player.getWorld().getName().equalsIgnoreCase(plugin.getConfig().getString("options.music.Worldname"))) {
-                Music.stop(player);
-            }else{
-                Music.start(player, plugin);
-            }
-
+        
+        
+        if (!plugin.getConfig().getBoolean("options.music.OneWorldonly")) {
+            return;
+        }
+        
+        String configWorldName = plugin.getConfig().getString("options.music.Worldname", "");
+        String playerWorldName = player.getWorld().getName();
+        
+        if (playerWorldName.equalsIgnoreCase(configWorldName)) {
+            Music.start(player, plugin);
+        } else {
+            Music.stop(player);
         }
     }
 }
