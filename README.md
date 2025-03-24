@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/T0biii/JoinMusic/workflows/Java%20CI/badge.svg)](https://github.com/T0biii/JoinMusic/actions)
 [![Spigot Version](https://img.shields.io/badge/Spigot-1.8--1.21-orange.svg)](https://www.spigotmc.org/resources/joinmusic.83541/)
 [![bStats Servers](https://img.shields.io/bstats/servers/6447)](https://bstats.org/plugin/bukkit/JoinMusic/6447)
-[![GitHub license](https://img.shields.io/github/license/T0biii/JoinMusic)](https://github.com/T0biii/JoinMusic/blob/master/LICENSE)  
+[![GitHub license](https://img.shields.io/github/license/T0biii/JoinMusic)](https://github.com/T0biii/JoinMusic/blob/master/LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qKskYDBAMW)
 ## Beschreibung
 JoinMusic ist ein Bukkit/Spigot-Plugin, das Musik abspielt, wenn ein Spieler den Server betritt. Es unterstützt sowohl Standalone-Spigot-Server als auch BungeeCord-Netzwerke.
