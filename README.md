@@ -6,67 +6,67 @@
 [![bStats Players](https://img.shields.io/bstats/players/6447)](https://bstats.org/plugin/bukkit/JoinMusik)
 [![GitHub license](https://img.shields.io/github/license/T0biii/JoinMusic)](https://github.com/T0biii/JoinMusic/blob/master/LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qKskYDBAMW)
-## Beschreibung
-JoinMusic ist ein Bukkit/Spigot-Plugin, das Musik abspielt, wenn ein Spieler den Server betritt. Es unterstützt sowohl Standalone-Spigot-Server als auch BungeeCord-Netzwerke.
+## Description
+JoinMusic is a Bukkit/Spigot plugin that plays music when a player joins the server. It supports both standalone Spigot servers and BungeeCord networks.
 
 ## Features
-- Spielt Musik ab, wenn ein Spieler den Server betritt
-- Unterstützt BungeeCord-Netzwerke
-- Konfigurierbare Verzögerung vor dem Abspielen der Musik
-- Optionales Looping der Musik
-- Weltspezifische Musikwiedergabe
-- PlaceholderAPI-Unterstützung
-- Automatische Update-Benachrichtigungen
+- Plays music when a player joins the server
+- Supports BungeeCord networks
+- Configurable delay before playing music
+- Optional music looping
+- World-specific music playback
+- PlaceholderAPI support
+- Automatic update notifications
 
-## Voraussetzungen
+## Requirements
 - Bukkit/Spigot 1.8 - 1.21
-- [NoteBlockAPI](https://www.spigotmc.org/resources/noteblockapi.19287/) (Version 1.6.1.1 oder neuer)
+- [NoteBlockAPI](https://www.spigotmc.org/resources/noteblockapi.19287/) (Version 1.6.1.1 or newer)
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (optional)
 
 ## Installation
-1. Lade die neueste Version von JoinMusic herunter
-2. Lade NoteBlockAPI herunter und installiere es
-3. Platziere beide JAR-Dateien in deinem Plugins-Ordner
-4. Starte deinen Server neu
-5. Konfiguriere das Plugin nach deinen Wünschen
+1. Download the latest version of JoinMusic
+2. Download and install NoteBlockAPI
+3. Place both JAR files in your plugins folder
+4. Restart your server
+5. Configure the plugin to your liking
 
-### BungeeCord-Setup
-Wenn du BungeeCord verwendest:
-1. Installiere das JoinMusic-Plugin auf allen Spigot-Servern
-2. Installiere das JoinMusic-Bungee-Plugin auf deinem BungeeCord-Server
-3. Aktiviere die BungeeCord-Option in der Konfiguration aller Spigot-Server
+### BungeeCord Setup
+If you're using BungeeCord:
+1. Install the JoinMusic plugin on all Spigot servers
+2. Install the JoinMusic Bungee plugin on your BungeeCord server
+3. Enable the BungeeCord option in the configuration of all Spigot servers
 
-## Konfiguration
-Die Hauptkonfigurationsdatei befindet sich unter `plugins/JoinMusic/config.yml`:
+## Configuration
+The main configuration file is located at `plugins/JoinMusic/config.yml`:
 
 ```yaml
-# Hauptmusikdatei oder Ordner
+# Main music file or folder
 music: Song.nbs
 
 options:
-  # Update-Einstellungen
-  update-check: true        # Prüft auf Updates beim Serverstart
-  updateinfo: true          # Zeigt Update-Benachrichtigungen für OPs
+  # Update settings
+  update-check: true        # Checks for updates on server start
+  updateinfo: true          # Shows update notifications for OPs
   
-  # Allgemeine Einstellungen
-  metrics: true             # Sendet anonyme Nutzungsstatistiken
-  delaySong: 2              # Verzögerung in Sekunden vor dem Abspielen
-  bungeecord: false         # BungeeCord-Modus aktivieren/deaktivieren
-  printSongTitel: true      # Zeigt den Songtitel beim Abspielen an
-  allowDisabling: true      # Erlaubt Spielern, die Musik für sich zu deaktivieren
+  # General settings
+  metrics: true             # Sends anonymous usage statistics
+  delaySong: 2              # Delay in seconds before playing
+  bungeecord: false         # Enable/disable BungeeCord mode
+  printSongTitel: true      # Shows the song title when playing
+  allowDisabling: true      # Allows players to disable music for themselves
   
-  # Musik-Einstellungen
+  # Music settings
   music:
-    random: false           # Zufällige Musikauswahl aktivieren
-    RandomFoldername: "random" # Ordner für zufällige Musikauswahl
-    Mode: "MonoMode"        # Wiedergabemodus (MonoMode/StereoMode)
-    10Octave: false         # 10 Oktaven aktivieren
-    Volume: 100             # Lautstärke (0-100)
-    AllowLooping: false     # Musik in Schleife abspielen
-    OneWorldonly: false     # Musik nur in einer bestimmten Welt abspielen
-    Worldname: "world"      # Name der Welt, wenn OneWorldonly aktiviert ist
+    random: false           # Enable random music selection
+    RandomFoldername: "random" # Folder for random music selection
+    Mode: "MonoMode"        # Playback mode (MonoMode/StereoMode)
+    10Octave: false         # Enable 10 octaves
+    Volume: 100             # Volume (0-100)
+    AllowLooping: false     # Play music in a loop
+    OneWorldonly: false     # Play music only in a specific world
+    Worldname: "world"      # Name of the world if OneWorldonly is enabled
 
-# Nachrichten-Einstellungen
+# Message settings
 messages:
   prefix: "&7[&bJoinMusic&7]"
   reload: "&3The reload was successful!"
@@ -81,32 +81,32 @@ messages:
     enableOwn: "Enable playing a song when joining"
 ```
 
-## Befehle
-- `/joinmusic` oder `/jm` - Zeigt die Hilfe mit verfügbaren Befehlen an
-- `/joinmusic reload` - Lädt die Konfiguration neu
-- `/joinmusic stop` - Stoppt die aktuell spielende Musik
-- `/joinmusic disable` - Deaktiviert die automatische Musikwiedergabe beim Betreten des Servers
-- `/joinmusic enable` - Aktiviert die automatische Musikwiedergabe beim Betreten des Servers
+## Commands
+- `/joinmusic` or `/jm` - Shows help with available commands
+- `/joinmusic reload` - Reloads the configuration
+- `/joinmusic stop` - Stops the currently playing music
+- `/joinmusic disable` - Disables automatic music playback when joining the server
+- `/joinmusic enable` - Enables automatic music playback when joining the server
 
-## Berechtigungen
-- `JoinMusic.use` - Erlaubt die Verwendung des /joinmusic-Befehls
-- `JoinMusic.play` - Erlaubt die Verwendung von /joinmusic play
-- `JoinMusic.command.stop` - Erlaubt die Verwendung von /joinmusic stop
-- `JoinMusic.command.reload` - Erlaubt die Verwendung von /joinmusic reload
-- `JoinMusic.command.disableOwn` - Erlaubt die Verwendung von /joinmusic disable and /jm enable
-- `JoinMusic.update` - Erhält Update-Benachrichtigungen
+## Permissions
+- `JoinMusic.use` - Allows using the /joinmusic command
+- `JoinMusic.play` - Allows using /joinmusic play
+- `JoinMusic.command.stop` - Allows using /joinmusic stop
+- `JoinMusic.command.reload` - Allows using /joinmusic reload
+- `JoinMusic.command.disableOwn` - Allows using /joinmusic disable and /jm enable
+- `JoinMusic.update` - Receives update notifications
 
 ## PlaceholderAPI
-JoinMusic unterstützt die folgenden PlaceholderAPI-Platzhalter:
-- `%joinmusic_version%` - Zeigt die aktuelle Version des Plugins an
-- `%joinmusic_titel%` oder `%joinmusic_song%` - Gibt den Titel des aktuell spielenden Songs zurück
-- `%joinmusic_author%` - Gibt den Autor des aktuell spielenden Songs zurück
-- `%joinmusic_originalauthor%` - Gibt den Originalautor des aktuell spielenden Songs zurück
-- `%joinmusic_description%` - Gibt die Beschreibung des aktuell spielenden Songs zurück
-- `%joinmusic_prefix%` - Gibt den Plugin-Präfix zurück
+JoinMusic supports the following PlaceholderAPI placeholders:
+- `%joinmusic_version%` - Shows the current version of the plugin
+- `%joinmusic_titel%` or `%joinmusic_song%` - Returns the title of the currently playing song
+- `%joinmusic_author%` - Returns the author of the currently playing song
+- `%joinmusic_originalauthor%` - Returns the original author of the currently playing song
+- `%joinmusic_description%` - Returns the description of the currently playing song
+- `%joinmusic_prefix%` - Returns the plugin prefix
 
-## Lizenz
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+## License
+This project is licensed under the [MIT License](LICENSE).
 
 ## Links
 - [Bukkit](https://dev.bukkit.org/projects/joinmusik)
