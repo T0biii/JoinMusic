@@ -5,7 +5,7 @@ JoinMusic's configuration is stored in `plugins/JoinMusic/config.yml`. This guid
 ## Main Configuration
 
 ```yaml
-# Main music file or folder
+# Main music file
 music: Song.nbs
 
 options:
