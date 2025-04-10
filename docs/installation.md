@@ -14,7 +14,7 @@ Before installing JoinMusic, make sure you have:
 
 ### Step 1: Download Required Files
 1. Download the latest version of JoinMusic from:
-   - [Spigot](https://www.spigotmc.org/resources/joinmusic.83541/)
+   - [Spigot](https://www.spigotmc.org/resources/joinmusic.78169/)
    - [Bukkit](https://dev.bukkit.org/projects/joinmusik)
    - [Hangar](https://hangar.papermc.io/T0biii/JoinMusic)
    - [Modrinth](https://modrinth.com/plugin/joinmusic)
