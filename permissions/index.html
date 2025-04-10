@@ -13,8 +13,10 @@
       
       
       
-        <link rel="prev" href="../permissions/">
+        <link rel="prev" href="../commands/">
       
+      
+        <link rel="next" href="../statistics/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Statistics - JoinMusic</title>
+        <title>Permissions - JoinMusic</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#statistics" class="md-skip">
+        <a href="#permissions" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Statistics
+              Permissions
             
           </span>
         </div>
@@ -305,9 +307,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../permissions/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -343,11 +347,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../statistics/" class="md-tabs__link">
         
   
   
@@ -507,10 +509,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../permissions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Permissions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -521,6 +545,200 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permission-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.play
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommandstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.stop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommandreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.reload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommanddisableown" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.disableOwn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notification Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-luckperms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with LuckPerms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-permissionsex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with PermissionsEx
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-permission-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Permission Assignments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Inheritance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -551,32 +769,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Statistics
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../statistics/" class="md-nav__link">
         
   
   
@@ -587,62 +783,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#server-statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Server Statistics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#player-statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Player Statistics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-statistics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed Statistics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#privacy-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Privacy Note
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -674,36 +814,174 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#server-statistics" class="md-nav__link">
+  <a href="#permission-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Server Statistics
+      Permission Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#player-statistics" class="md-nav__link">
+  <a href="#permission-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Player Statistics
+      Permission Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.play
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommandstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.stop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommandreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.reload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinmusiccommanddisableown" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.command.disableOwn
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notification Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#joinmusicupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      JoinMusic.update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permission-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permission Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-luckperms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with LuckPerms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-permissionsex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example with PermissionsEx
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-permission-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Permission Assignments
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-statistics" class="md-nav__link">
+  <a href="#permission-inheritance" class="md-nav__link">
     <span class="md-ellipsis">
-      Detailed Statistics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#privacy-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Privacy Note
+      Permission Inheritance
     </span>
   </a>
   
@@ -725,16 +1003,135 @@
 
 
 
-<h1 id="statistics">Statistics</h1>
-<p>JoinMusic uses bStats to collect anonymous usage statistics. This helps us understand how the plugin is being used and what features are most popular.</p>
-<h2 id="server-statistics">Server Statistics</h2>
-<p><img alt="bStats Servers" src="https://img.shields.io/bstats/servers/6447" /></p>
-<h2 id="player-statistics">Player Statistics</h2>
-<p><img alt="bStats Players" src="https://img.shields.io/bstats/players/6447" /></p>
-<h2 id="detailed-statistics">Detailed Statistics</h2>
-<p>You can view detailed statistics about JoinMusic on the <a href="https://bstats.org/plugin/bukkit/JoinMusic/6447">bStats website</a>.</p>
-<h2 id="privacy-note">Privacy Note</h2>
-<p>bStats collects anonymous usage data only. No personal information is collected or stored. You can disable metrics in the configuration file by setting <code>options.metrics</code> to <code>false</code>. </p>
+<h1 id="permissions">Permissions</h1>
+<p>JoinMusic uses a comprehensive permission system to control access to commands and features. This page lists all available permissions and their purposes.</p>
+<h2 id="permission-overview">Permission Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JoinMusic.use</code></td>
+<td>Allows using the /joinmusic command</td>
+<td>All players</td>
+</tr>
+<tr>
+<td><code>JoinMusic.play</code></td>
+<td>Allows using /joinmusic play</td>
+<td>All players</td>
+</tr>
+<tr>
+<td><code>JoinMusic.command.stop</code></td>
+<td>Allows using /joinmusic stop</td>
+<td>All players</td>
+</tr>
+<tr>
+<td><code>JoinMusic.command.reload</code></td>
+<td>Allows using /joinmusic reload</td>
+<td>Operators</td>
+</tr>
+<tr>
+<td><code>JoinMusic.command.disableOwn</code></td>
+<td>Allows using /joinmusic disable and /jm enable</td>
+<td>All players</td>
+</tr>
+<tr>
+<td><code>JoinMusic.update</code></td>
+<td>Receives update notifications</td>
+<td>Operators</td>
+</tr>
+</tbody>
+</table>
+<h2 id="permission-details">Permission Details</h2>
+<h3 id="basic-permissions">Basic Permissions</h3>
+<h4 id="joinmusicuse"><code>JoinMusic.use</code></h4>
+<ul>
+<li><strong>Description:</strong> Allows using the main /joinmusic command</li>
+<li><strong>Default:</strong> All players</li>
+<li><strong>Usage:</strong> This permission is required to use any JoinMusic command</li>
+<li><strong>Example:</strong> Without this permission, players cannot see the help menu</li>
+</ul>
+<h4 id="joinmusicplay"><code>JoinMusic.play</code></h4>
+<ul>
+<li><strong>Description:</strong> Allows using the /joinmusic play command</li>
+<li><strong>Default:</strong> All players</li>
+<li><strong>Usage:</strong> This permission is required to manually play music</li>
+<li><strong>Example:</strong> Players with this permission can trigger music playback</li>
+</ul>
+<h3 id="command-permissions">Command Permissions</h3>
+<h4 id="joinmusiccommandstop"><code>JoinMusic.command.stop</code></h4>
+<ul>
+<li><strong>Description:</strong> Allows using the /joinmusic stop command</li>
+<li><strong>Default:</strong> All players</li>
+<li><strong>Usage:</strong> This permission is required to stop currently playing music</li>
+<li><strong>Example:</strong> Players with this permission can stop music that is currently playing</li>
+</ul>
+<h4 id="joinmusiccommandreload"><code>JoinMusic.command.reload</code></h4>
+<ul>
+<li><strong>Description:</strong> Allows using the /joinmusic reload command</li>
+<li><strong>Default:</strong> Operators</li>
+<li><strong>Usage:</strong> This permission is required to reload the plugin configuration</li>
+<li><strong>Example:</strong> Server administrators use this to apply configuration changes without restarting</li>
+</ul>
+<h4 id="joinmusiccommanddisableown"><code>JoinMusic.command.disableOwn</code></h4>
+<ul>
+<li><strong>Description:</strong> Allows using /joinmusic disable and /jm enable commands</li>
+<li><strong>Default:</strong> All players</li>
+<li><strong>Usage:</strong> This permission is required to toggle music playback for yourself</li>
+<li><strong>Example:</strong> Players with this permission can disable music when they join</li>
+</ul>
+<h3 id="notification-permissions">Notification Permissions</h3>
+<h4 id="joinmusicupdate"><code>JoinMusic.update</code></h4>
+<ul>
+<li><strong>Description:</strong> Receives update notifications</li>
+<li><strong>Default:</strong> Operators</li>
+<li><strong>Usage:</strong> This permission is required to see update notifications</li>
+<li><strong>Example:</strong> Server administrators use this to be informed about new versions</li>
+</ul>
+<h2 id="permission-configuration">Permission Configuration</h2>
+<p>JoinMusic integrates with popular permission plugins such as:</p>
+<ul>
+<li>LuckPerms</li>
+<li>PermissionsEx</li>
+<li>GroupManager</li>
+<li>EssentialsX</li>
+</ul>
+<p>To set up permissions, you can use your preferred permission plugin's commands or configuration files.</p>
+<h3 id="example-with-luckperms">Example with LuckPerms</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/lp user &lt;player&gt; permission set JoinMusic.command.reload
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/lp group admin permission set JoinMusic.command.reload
+</code></pre></div>
+<h3 id="example-with-permissionsex">Example with PermissionsEx</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/pex user &lt;player&gt; add JoinMusic.command.reload
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/pex group admin add JoinMusic.command.reload
+</code></pre></div>
+<h2 id="default-permission-assignments">Default Permission Assignments</h2>
+<p>By default, JoinMusic assigns permissions as follows:</p>
+<ul>
+<li>All players can use basic commands (<code>JoinMusic.use</code>, <code>JoinMusic.play</code>, <code>JoinMusic.command.stop</code>, <code>JoinMusic.command.disableOwn</code>)</li>
+<li>Only operators can use administrative commands (<code>JoinMusic.command.reload</code>, <code>JoinMusic.update</code>)</li>
+</ul>
+<h2 id="permission-inheritance">Permission Inheritance</h2>
+<p>If you're using a permission plugin that supports inheritance, you can set up permission groups to inherit permissions from other groups. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>admin:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  permissions:
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    - JoinMusic.*
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>moderator:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  permissions:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    - JoinMusic.use
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    - JoinMusic.play
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    - JoinMusic.command.stop
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>player:
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  permissions:
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    - JoinMusic.use
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    - JoinMusic.command.disableOwn
+</code></pre></div>
+<p>This way, administrators would have all permissions, moderators would have most permissions except reload, and regular players would only have basic permissions. </p>
 
 
 
