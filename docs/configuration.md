@@ -118,6 +118,6 @@ Formatting codes:
 ## Reloading Configuration
 
 To apply configuration changes:
-1. Edit the `config.yml` file
-2. Use the command `/joinmusic reload` or `/jm reload`
-3. The changes will be applied immediately 
+1. Edit the `config.yml` file  
+2. Use the command `/joinmusic reload` or `/jm reload`  
+3. The changes will be applied immediately   
