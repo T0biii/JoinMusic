@@ -1,6 +1,8 @@
 site_name: JoinMusic
 site_description: A Bukkit/Spigot plugin that plays music when a player joins the server
 site_author: T0biii
+repo_url: https://github.com/T0biii/JoinMusic
+repo_name: T0biii/JoinMusic
 theme:
   name: material
   features:
@@ -44,5 +46,4 @@ nav:
   - Configuration: configuration.md
   - Commands: commands.md
   - Permissions: permissions.md
-  - PlaceholderAPI: placeholderapi.md
   - Statistics: statistics.md 
