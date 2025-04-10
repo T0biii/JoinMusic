@@ -91,29 +91,29 @@ All messages support color codes using the `&` symbol:
 ## Color Codes
 
 You can use these color codes in messages:
-- `&0` - Black
-- `&1` - Dark Blue
-- `&2` - Dark Green
-- `&3` - Dark Aqua
-- `&4` - Dark Red
-- `&5` - Dark Purple
-- `&6` - Gold
-- `&7` - Gray
-- `&8` - Dark Gray
-- `&9` - Blue
-- `&a` - Green
-- `&b` - Aqua
-- `&c` - Red
-- `&d` - Light Purple
-- `&e` - Yellow
-- `&f` - White
-
+- `&0` - Black  
+- `&1` - Dark Blue  
+- `&2` - Dark Green  
+- `&3` - Dark Aqua  
+- `&4` - Dark Red  
+- `&5` - Dark Purple  
+- `&6` - Gold  
+- `&7` - Gray  
+- `&8` - Dark Gray  
+- `&9` - Blue  
+- `&a` - Green  
+- `&b` - Aqua  
+- `&c` - Red  
+- `&d` - Light Purple  
+- `&e` - Yellow  
+- `&f` - White  
+  
 Formatting codes:
-- `&l` - Bold
-- `&n` - Underline
-- `&o` - Italic
-- `&k` - Magic
-- `&r` - Reset
+- `&l` - Bold  
+- `&n` - Underline  
+- `&o` - Italic  
+- `&k` - Magic  
+- `&r` - Reset  
 
 ## Reloading Configuration
 
