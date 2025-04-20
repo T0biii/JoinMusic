@@ -6,7 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import de.t0biii.joinmusic.spigot.domain.Music;
-import de.t0biii.joinmusic.spigot.domain.Updater;
 import de.t0biii.joinmusic.spigot.main.Main;
 
 public class HANDLER_PlayerJoin implements Listener {
@@ -21,7 +20,7 @@ public class HANDLER_PlayerJoin implements Listener {
   public void onPlayerJoin(PlayerJoinEvent event) {
     final Player player = event.getPlayer();
 
-    if(!plugin.getConfig().getBoolean("options.bungeecord")){
+    if (!plugin.getConfig().getBoolean("options.bungeecord")) {
       int delay = plugin.getConfig().getInt("options.delaySong");
 
       Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
@@ -32,15 +31,17 @@ public class HANDLER_PlayerJoin implements Listener {
       }, 20L * delay);
     }
 
-    if (this.plugin.update) {
-      if ((player.isOp() || player.hasPermission("JoinMusic.update"))
-          && plugin.getConfig().getBoolean("options.updateinfo")) {
-        if (this.plugin.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE)
-          // &8An update is avaliable: &e&lJoinMusic v1.7&8, a &6&l RELEASE &8for &61.8
-          player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, a §6§l"
-              + this.plugin.type + " §8for §6" + this.plugin.version);
-        player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link2);
-      }
+    if (!this.plugin.UPDATE_AVAILABLE) {
+      return;
     }
+    if (!(player.isOp() || player.hasPermission("JoinMusic.update"))) {
+      return;
+    }
+    if (!plugin.getConfig().getBoolean("options.updateinfo")) {
+      return;
+    }
+
+    player.sendMessage(this.plugin.prefix + "§8An update is available: §e§l" + this.plugin.name + "§8, §6§l§8Version §6" + this.plugin.version);
+    player.sendMessage(this.plugin.prefix + "§8Download: §7" + this.plugin.link);
   }
 }
