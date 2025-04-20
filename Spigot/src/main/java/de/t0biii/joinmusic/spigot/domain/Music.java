@@ -117,7 +117,7 @@ public class Music {
         player.sendMessage(plugin.prefix + playingMessage.replaceAll("&", "§"));
       }
     } catch (IllegalArgumentException e) {
-      System.err.println(plugin.cprefix + "No sounds detected");
+      plugin.log.warning(plugin.cprefix + "No sounds detected");
     }
   }
 

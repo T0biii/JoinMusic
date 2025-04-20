@@ -13,17 +13,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-  public boolean update = false;
+  public boolean UPDATE_AVAILABLE = false;
   public static boolean placeholderProvided = false;
   public String noteblockAPIVersion = "";
   public String placeholderAPIVersion = "";
-  public String name = "";
-  public Updater.ReleaseType type = null;
+  final private String author = "T0biii";
+  final public String name = "JoinMusic";
   public String version = "";
   public String link = "";
-  public String link2 = "http://dev.bukkit.org/bukkit-plugins/joinmusic/";
-  private int uid = 83541;
-  public Updater updater;
 
   public ConfigManager cm = new ConfigManager(this);
   public Logger log = Bukkit.getLogger();
@@ -88,17 +85,16 @@ public class Main extends JavaPlugin {
 
   public void Updater() {
     if (this.getConfig().getBoolean("options.update-check")) {
-      // Start Updater but just do a version check
-      updater = new Updater(this, uid, Updater.UpdateType.NO_DOWNLOAD);
-      // Determine if there is an update ready for us
-      update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
-      name = updater.getLatestName(); // Get the latest name
-      version = updater.getLatestGameVersion(); // Get the latest game version
-      type = updater.getLatestType(); // Get the latest file's type
-      link = updater.getLatestFileLink(); // Get the latest link
-      if (update) {
-        log.info(cprefix + "New version available! " + name);
-        log.info(cprefix + "Download at: " + link2);
+      version = this.getDescription().getVersion();
+      UpdateChecker updater = new UpdateChecker(author, name, version);
+      updater.checkAsync();
+      UPDATE_AVAILABLE = updater.isUpdateAvailable();
+
+      if (UPDATE_AVAILABLE) {
+        version = updater.getLatestVersion();
+        link = updater.getUpdateUrl();
+        log.info(cprefix + "New version available for JoinMusic! " + version);
+        log.info(cprefix + "Download at: " + link);
       }
     }
   }
