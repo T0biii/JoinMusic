@@ -9,7 +9,7 @@
     <dependencies>
         <dependency>
             <groupId>de.t0biii</groupId>
-            <artifactId>JoinMusic-Spigot</artifactId>
+            <artifactId>JoinMusic-Paper</artifactId>
             <version>6.5</version>
         </dependency>
         <dependency>
