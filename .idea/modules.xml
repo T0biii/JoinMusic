@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/JoinMusic.iml" filepath="$PROJECT_DIR$/JoinMusic.iml" />
       <module fileurl="file://$PROJECT_DIR$/Bungee/JoinMusic-Bungee.iml" filepath="$PROJECT_DIR$/Bungee/JoinMusic-Bungee.iml" />
       <module fileurl="file://$PROJECT_DIR$/Master/JoinMusic-Master.iml" filepath="$PROJECT_DIR$/Master/JoinMusic-Master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Spigot/JoinMusic-Spigot.iml" filepath="$PROJECT_DIR$/Spigot/JoinMusic-Spigot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spigot/JoinMusic-Paper.iml" filepath="$PROJECT_DIR$/Spigot/JoinMusic-Paper.iml" />
     </modules>
   </component>
 </project>
