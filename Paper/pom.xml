@@ -14,7 +14,7 @@
     <version>6.5</version>
     <packaging>jar</packaging>
 
-    <name>JoinMusic-Spigot</name>
+    <name>JoinMusic-Paper</name>
 
     <properties>
         <java.version>1.8</java.version>
