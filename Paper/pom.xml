@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>JoinMusic-Spigot</artifactId>
+    <artifactId>JoinMusic-Paper</artifactId>
     <version>6.5</version>
     <packaging>jar</packaging>
 
