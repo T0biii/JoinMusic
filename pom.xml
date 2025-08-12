@@ -24,8 +24,8 @@
     </build>
     <repositories>
         <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
             <id>OSS-Repo</id>
@@ -45,7 +45,7 @@
         </repository>
     </repositories>
     <modules>
-        <module>Spigot</module>
+        <module>Paper</module>
         <module>Bungee</module>
         <module>Master</module>
     </modules>
