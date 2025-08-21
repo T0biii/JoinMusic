@@ -50,6 +50,13 @@ public class Music {
     removePlayer(uuid);
   }
 
+  public static void skip(Player player, Main plugin) {
+    if (plugin.getConfig().getBoolean("options.music.AllowLooping") && plugin.getConfig().getBoolean("options.music.random")) {
+      stop(player);
+      start(player, plugin);
+    }
+  }
+
   private static void play(Player player, Main plugin) {
     if (player.hasPermission("JoinMusic.use") || player.isOp()) {
       if (!playingSong.containsKey(player.getUniqueId())) {

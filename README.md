@@ -88,6 +88,7 @@ messages:
 - `/joinmusic disable` - Disables automatic music playback when joining the server
 - `/joinmusic enable` - Enables automatic music playback when joining the server
 - `/joinmusic toggle` - Toggles (enables or disables) automatic music playback when joining the server
+- `/joinmusic skip` - Skips the current song if looping is activ
 
 ## Permissions
 - `JoinMusic.use` - Allows using the /joinmusic command

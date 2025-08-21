@@ -47,6 +47,7 @@ public class ConfigManager {
     this.plugin.getConfig().addDefault("messages.help.stop", "Stop playing the Song!");
     this.plugin.getConfig().addDefault("messages.help.disableOwn", "Disable playing a song when joining");
     this.plugin.getConfig().addDefault("messages.help.enableOwn", "Enable playing a song when joining");
+    this.plugin.getConfig().addDefault("messages.skip", "&3Skipped to next random song");
 
     this.plugin.getConfig().options().copyDefaults(true);
     this.plugin.prefix = this.plugin.getConfig().getString("messages.prefix").replaceAll("&", "§") + "§r ";

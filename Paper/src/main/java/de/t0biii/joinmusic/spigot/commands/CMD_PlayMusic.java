@@ -77,6 +77,13 @@ public class CMD_PlayMusic implements CommandExecutor {
               } else {
                   sender.sendMessage(plugin.prefix + noperm);
               }
+          } else if (args[0].equalsIgnoreCase("skip")) {
+                if(sender.hasPermission("JoinMusic.command.skip")) {
+                    sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.skip").replaceAll("&", "§"));
+                    Music.skip(player, plugin);
+                } else {
+                    sender.sendMessage(plugin.prefix + noperm);
+                } 
           } else{
             sendInstructions(player);
           }
@@ -108,6 +115,10 @@ public class CMD_PlayMusic implements CommandExecutor {
     }
     sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "stop  " + ChatColor.DARK_GRAY + "| "
         + ChatColor.GREEN + plugin.getConfig().getString("messages.help.stop"));
+    if(sender.hasPermission("JoinMusic.command.stop")) {
+      sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "skip  " + ChatColor.DARK_GRAY + "| "
+          + ChatColor.GREEN + "Skip to next random song");
+    }
     if(sender.hasPermission("JoinMusic.command.disableOwn")) {
       sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "disable  " + ChatColor.DARK_GRAY + "| "
           + ChatColor.GREEN + plugin.getConfig().getString("messages.help.disableOwn"));
@@ -129,6 +140,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         }
         if (commandSender.hasPermission("JoinMusic.command.stop")) {
           list.add("stop");
+          list.add("skip");
         }
         if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
           list.add("enable");
