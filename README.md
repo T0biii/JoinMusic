@@ -87,13 +87,14 @@ messages:
 - `/joinmusic stop` - Stops the currently playing music
 - `/joinmusic disable` - Disables automatic music playback when joining the server
 - `/joinmusic enable` - Enables automatic music playback when joining the server
+- `/joinmusic toggle` - Toggles (enables or disables) automatic music playback when joining the server
 
 ## Permissions
 - `JoinMusic.use` - Allows using the /joinmusic command
 - `JoinMusic.play` - Allows using /joinmusic play
 - `JoinMusic.command.stop` - Allows using /joinmusic stop
 - `JoinMusic.command.reload` - Allows using /joinmusic reload
-- `JoinMusic.command.disableOwn` - Allows using /joinmusic disable and /jm enable
+- `JoinMusic.command.disableOwn` - Allows using /joinmusic disable/enable/toggle
 - `JoinMusic.update` - Receives update notifications
 
 ## PlaceholderAPI

@@ -54,7 +54,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         	  }else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
-          }else if (args[0].equalsIgnoreCase("enable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
+          } else if (args[0].equalsIgnoreCase("enable") && plugin.getConfig().getBoolean("options.allowDisabling")) {
         	  if(sender.hasPermission("JoinMusic.command.disableOwn")) {
         		  plugin.cm.getUserConfigs().set(player.getUniqueId().toString(),null);
         		  plugin.cm.saveUserConfigs();
@@ -62,6 +62,21 @@ public class CMD_PlayMusic implements CommandExecutor {
         	  } else {
         		sender.sendMessage(plugin.prefix + noperm);
         	  }
+          } else if (args[0].equalsIgnoreCase("toggle") && plugin.getConfig().getBoolean("options.allowDisabling")) {
+              if(sender.hasPermission("JoinMusic.command.disableOwn")) {
+                boolean isDisabled = plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString());
+                  if(isDisabled) {
+                      plugin.cm.getUserConfigs().set(player.getUniqueId().toString(), null);
+                      plugin.cm.saveUserConfigs();
+                      sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.enabled").replaceAll("&", "§"));
+                  } else {
+                      plugin.cm.getUserConfigs().set(player.getUniqueId().toString(), true);
+                      plugin.cm.saveUserConfigs();
+                      sender.sendMessage(plugin.prefix + plugin.getConfig().getString("messages.disabled").replaceAll("&", "§"));
+                  }
+              } else {
+                  sender.sendMessage(plugin.prefix + noperm);
+              }
           } else{
             sendInstructions(player);
           }
@@ -98,6 +113,8 @@ public class CMD_PlayMusic implements CommandExecutor {
           + ChatColor.GREEN + plugin.getConfig().getString("messages.help.disableOwn"));
       sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "enable   " + ChatColor.DARK_GRAY + "| "
           + ChatColor.GREEN + plugin.getConfig().getString("messages.help.enableOwn"));
+      sender.sendMessage(ChatColor.GRAY + "/jm " + ChatColor.GREEN + "toggle   " + ChatColor.DARK_GRAY + "| "
+          + ChatColor.GREEN + "Toggle JoinMusic on/off");
       sender.sendMessage(ChatColor.GRAY + "======= " + ChatColor.GREEN + plugin.prefix + ChatColor.GRAY + "=======");
     }
   }
@@ -116,6 +133,7 @@ public class CMD_PlayMusic implements CommandExecutor {
         if (commandSender.hasPermission("JoinMusic.command.disableOwn")) {
           list.add("enable");
           list.add("disable");
+          list.add("toggle");
         }
         if (!commandSender.hasPermission("JoinMusic.command.stop")
             && !commandSender.hasPermission("JoinMusic.command.reload")
