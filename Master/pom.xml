@@ -43,7 +43,7 @@
                     </relocations>
                     <artifactSet>
                         <includes>
-                            <include>de.t0biii:JoinMusic-Spigot</include>
+                            <include>de.t0biii:JoinMusic-Paper</include>
                             <include>de.t0biii:JoinMusic-Bungee</include>
                         </includes>
                     </artifactSet>
