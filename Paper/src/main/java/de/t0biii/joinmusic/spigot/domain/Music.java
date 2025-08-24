@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Set;
 import java.util.UUID;
 
 import com.xxmicloxx.NoteBlockAPI.model.playmode.MonoMode;
@@ -23,21 +24,48 @@ public class Music {
 
   public static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
-  public static void start(Player player, Main plugin){
-	if(plugin.getConfig().getBoolean("options.allowDisabling")) {
-		if(plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString(),false)) {
-			return;
-		}
-	}
-	if(plugin.getConfig().getBoolean("options.music.OneWorldonly")){
-	  if(!player.getWorld().getName().equalsIgnoreCase(plugin.getConfig().getString("options.music.Worldname"))){
-	    return;
+  private static HashMap<String, Song> cachedSongs = new HashMap<>();
+
+  public static void preloadSongs(Main plugin) {
+    cachedSongs.clear();
+
+    if (plugin.getConfig().getBoolean("options.music.random")) {
+      File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername"));
+      if (dir.exists()) {
+        File[] files = dir.listFiles();
+        if (files != null && files.length > 0) {
+          for (File file : files) {
+            Song song = NBSDecoder.parse(file);
+            cachedSongs.put(file.getName(), song);
+          }
+        }
+      }
+    } else {
+        File mainSongFile = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
+        Song mainSong = NBSDecoder.parse(mainSongFile);
+        cachedSongs.put(mainSongFile.getName(), mainSong);
+    }
+  }
+
+  private static Set<String> getCachedSongNames() {
+    return cachedSongs.keySet();
+  }
+
+  public static void start(Player player, Main plugin) {
+    if(plugin.getConfig().getBoolean("options.allowDisabling")) {
+      if(plugin.cm.getUserConfigs().getBoolean(player.getUniqueId().toString(), false)) {
+        return;
+      }
+    }
+    if(plugin.getConfig().getBoolean("options.music.OneWorldonly")) {
+      if(!player.getWorld().getName().equalsIgnoreCase(plugin.getConfig().getString("options.music.Worldname"))) {
+        return;
       }
     }
     play(player, plugin);
   }
 
-  public static void start(UUID uuid, Main plugin){
+  public static void start(UUID uuid, Main plugin) {
     Player p = Bukkit.getPlayer(uuid);
     start(p,plugin);
   }
@@ -84,13 +112,24 @@ public class Music {
 
   private static void playSong(Player player, Main plugin) {
     try {
-      File songFile;
+      Song s;
+
       if (plugin.getConfig().getBoolean("options.music.random")) {
-        songFile = SelectRandomFileFromFolder(plugin);
+        Set<String> keys = getCachedSongNames();
+        if (!keys.isEmpty()) {
+          String[] songNames = keys.toArray(new String[0]);
+          Random rand = new Random();
+          String randomSongName = songNames[rand.nextInt(songNames.length)];
+          s = cachedSongs.get(randomSongName);
+        } else {
+          plugin.log.warning(plugin.cprefix + "No song found in Random folder.");
+          return;
+        }
+
       } else {
-        songFile = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
+        String mainSongName = new File(plugin.getConfig().getString("music")).getName();
+        s = cachedSongs.get(mainSongName);
       }
-      Song s = NBSDecoder.parse(songFile);
 
       final RadioSongPlayer sp = new RadioSongPlayer(s);
       sp.addPlayer(player);
@@ -106,7 +145,7 @@ public class Music {
         sp.setEnable10Octave(true);
       }
       String mode = plugin.getConfig().getString("options.music.Mode");
-      if(mode.equalsIgnoreCase("MonoMode")){
+      if(mode.equalsIgnoreCase("MonoMode")) {
         sp.setChannelMode(new MonoMode());
       }else if(mode.equalsIgnoreCase("MonoStereoMode")){
         sp.setChannelMode(new MonoStereoMode());
@@ -142,21 +181,6 @@ public class Music {
         e.printStackTrace();
       }
     }
-  }
-
-  private static File SelectRandomFileFromFolder(Main plugin) {
-    createRandomFileDir(plugin);
-    File dir = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("options.music.RandomFoldername"));
-    if (dir.exists()) {
-      File[] files = dir.listFiles();
-      if (files.length > 0) {
-        Random rand = new Random();
-        return files[rand.nextInt(files.length)];
-      } else {
-        return new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
-      }
-    }
-    return null;
   }
 
   private static String replacePlaceholders(Player p, String string){

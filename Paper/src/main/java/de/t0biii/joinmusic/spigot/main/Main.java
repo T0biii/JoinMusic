@@ -59,6 +59,7 @@ public class Main extends JavaPlugin {
 
     Updater();
     Music.createRandomFileDir(this);
+    Music.preloadSongs(this);
 
     if (this.getConfig().getBoolean("options.metrics")) {
       Metrics metrics = new Metrics(this, 6447);
