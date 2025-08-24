@@ -82,6 +82,26 @@ Enables automatic music playback when joining the server. This setting is saved 
 > /jm enable
 [JoinMusic] Enabled playing a song when joining
 ```
+### Toggle Command
+```
+/joinmusic toggle
+/jm toggle
+```
+Toggles (enables or disables) automatic music playback when joining the server. This setting is saved per player.
+
+**Permission:** `JoinMusic.command.disableOwn`
+
+**Example:**
+```
+> /jm toggle
+[JoinMusic] Disabled playing a song when joining. To enable it again, use /jm enable
+```
+
+```
+> /jm toggle
+[JoinMusic] Enabled playing a song when joining
+```
+
 
 ## Command Messages
 
