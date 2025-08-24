@@ -6,7 +6,7 @@ This guide will help you install and set up JoinMusic on your server.
 
 Before installing JoinMusic, make sure you have:
 
-- A Bukkit/Spigot server (version 1.8 - 1.21)
+- A Bukkit/Spigot server (version 1.8 - 1.21.x)
 - [NoteBlockAPI](https://www.spigotmc.org/resources/noteblockapi.19287/) (Version 1.6.1.1 or newer)
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (optional)
 

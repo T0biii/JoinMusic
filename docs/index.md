@@ -26,14 +26,14 @@ JoinMusic is a powerful Bukkit/Spigot plugin that enhances your server's atmosph
 - 🎵 Automatic music playback on player join
 - 🌐 BungeeCord network support
 - ⚙️ Highly configurable settings
-- 🌍 World-specific music playback
+- 🌍 Restrict music to a single world
 - 🔄 Optional music looping
 - 📊 PlaceholderAPI integration
 - 🔔 Automatic update notifications
 
 ## Requirements
 
-- Bukkit/Spigot 1.8 - 1.21
+- Bukkit/Spigot 1.8 - 1.21.x
 - [NoteBlockAPI](https://www.spigotmc.org/resources/noteblockapi.19287/) (Version 1.6.1.1 or newer)
 - [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) (optional)
 

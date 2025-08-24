@@ -8,6 +8,7 @@ JoinMusic uses a comprehensive permission system to control access to commands a
 |------------|-------------|---------|
 | `JoinMusic.use` | Allows using the /joinmusic command | All players |
 | `JoinMusic.play` | Allows using /joinmusic play | All players |
+| `JoinMusic.command.skip` | Allows using /joinmusic skip | All players |
 | `JoinMusic.command.stop` | Allows using /joinmusic stop | All players |
 | `JoinMusic.command.reload` | Allows using /joinmusic reload | Operators |
 | `JoinMusic.command.disableOwn` | Allows using /joinmusic disable and /jm enable | All players |
@@ -36,6 +37,12 @@ JoinMusic uses a comprehensive permission system to control access to commands a
 - **Default:** All players
 - **Usage:** This permission is required to stop currently playing music
 - **Example:** Players with this permission can stop music that is currently playing
+
+#### `JoinMusic.command.skip`
+- **Description:** Allows using the /joinmusic skip command
+- **Default:** All players
+- **Usage:** This permission is required to skip currently playing music
+- **Example:** Players with this permission can skip music that is currently playing (only if looping is enabled)
 
 #### `JoinMusic.command.reload`
 - **Description:** Allows using the /joinmusic reload command

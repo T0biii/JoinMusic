@@ -16,8 +16,6 @@ JoinMusic comes packed with many features to enhance your server's atmosphere. H
 - Synchronized music playback across your network
 
 ### 🌍 World-Specific Music
-- Play different music in different worlds
-- Configure specific music for each world
 - Option to restrict music to a single world
 
 ### ⚙️ Configuration Options
@@ -51,7 +49,7 @@ JoinMusic comes packed with many features to enhance your server's atmosphere. H
 - Configurable message prefix
 
 ### 🛠️ Technical Features
-- Support for Bukkit/Spigot 1.8 - 1.21
+- Support for Bukkit/Spigot 1.8 - 1.21.x
 - Efficient resource usage
 - Easy configuration through YAML files
 - Comprehensive permission system 

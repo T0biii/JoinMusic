@@ -44,6 +44,7 @@ messages:
     stop: "Stop playing the Song!"
     disableOwn: "Disable playing a song when joining"
     enableOwn: "Enable playing a song when joining"
+  skip: "&3Skipped to next random song"
 ```
 
 ## Configuration Options Explained
@@ -87,6 +88,7 @@ All messages support color codes using the `&` symbol:
 | `messages.disabled` | Music disabled | `&3Disabled playing a song when joining` |
 | `messages.enabled` | Music enabled | `&3Enabled playing a song when joining` |
 | `messages.playing` | Song playing | `&2Started Playing the Song: &a&l%song%` |
+| `messages.skip` | Skip playing | `&3Skipped to next random song` |
 
 ## Color Codes
 
