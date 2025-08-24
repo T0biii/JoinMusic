@@ -29,6 +29,9 @@ permissions:
   JoinMusic.command.stop:
     description: Allows stopping music from playing
     default: true
+  JoinMusic.command.skip:
+    description: Allows skipping music from playing
+    default: true
   JoinMusic.command.disableOwn:
     description: Allows disabling music on join for themself
     default: true
