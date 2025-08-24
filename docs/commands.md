@@ -11,6 +11,7 @@ JoinMusic provides several commands to control music playback and plugin setting
 | `/joinmusic stop` | Stops the currently playing music | `JoinMusic.command.stop` |
 | `/joinmusic disable` | Disables automatic music playback | `JoinMusic.command.disableOwn` |
 | `/joinmusic enable` | Enables automatic music playback | `JoinMusic.command.disableOwn` |
+| `/joinmusic skip` | Skips the current song if looping is activ | `JoinMusic.command.skip` |
 
 ## Command Details
 
@@ -102,6 +103,20 @@ Toggles (enables or disables) automatic music playback when joining the server. 
 [JoinMusic] Enabled playing a song when joining
 ```
 
+
+### Skip Command
+```
+/joinmusic skip
+/jm skip
+```
+Enables automatic music playback when joining the server. This setting is saved per player.
+
+**Permission:** `JoinMusic.command.skip`
+
+**Example:**
+```
+> /jm skip
+[JoinMusic] Skipped to next random song
 
 ## Command Messages
 
