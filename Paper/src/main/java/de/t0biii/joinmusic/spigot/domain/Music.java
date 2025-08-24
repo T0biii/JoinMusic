@@ -34,11 +34,16 @@ public class Music {
         File[] files = dir.listFiles();
         if (files != null && files.length > 0) {
           plugin.log.info(plugin.cprefix + "Preloading " + files.length + " songs... (can take some time depending on the amount of songs)");
+          int count = 0;
           for (File file : files) {
             Song song = NBSDecoder.parse(file);
             cachedSongs.put(file.getName(), song);
+            count++;
+            if (count % 10 == 0) {
+                plugin.log.info(plugin.cprefix + count + " / " + files.length + " songs loaded...");
+            }
           }
-        }
+}
       }
     } else {
         File mainSongFile = new File(plugin.getDataFolder() + "/" + plugin.getConfig().getString("music"));
