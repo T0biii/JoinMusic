@@ -8,7 +8,7 @@ depend:
 softdepend:
   - PlaceholderAPI
 version: ${project.version}
-website: http://dev.bukkit.org/bukkit-plugins/joinmusik
+website: https://modrinth.com/plugin/joinmusic
 main: de.t0biii.joinmusic.spigot.main.Main
 database: false
 commands:
