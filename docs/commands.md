@@ -118,13 +118,14 @@ Enables automatic music playback when joining the server. This setting is saved 
 ```
 > /jm skip
 [JoinMusic] Skipped to next random song
-
+```
 ## Command Messages
 
 All command messages can be customized in the `config.yml` file under the `messages` section:
 
 ```yaml
 messages:
+  skip: '&3Skipped to next random song'
   prefix: "&7[&bJoinMusic&7]"
   reload: "&3The reload was successful!"
   stop: "&3Stopped playing the song! &7&oYou can disable playing a song on join with &b&o/jm disable"
