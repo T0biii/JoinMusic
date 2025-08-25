@@ -125,18 +125,21 @@ All command messages can be customized in the `config.yml` file under the `messa
 
 ```yaml
 messages:
-  skip: '&3Skipped to next random song'
-  prefix: "&7[&bJoinMusic&7]"
-  reload: "&3The reload was successful!"
-  stop: "&3Stopped playing the song! &7&oYou can disable playing a song on join with &b&o/jm disable"
-  no-permission: "&cYou don't have enough permissions"
-  disabled: "&3Disabled playing a song when joining. To enable it again, use &b/jm enable"
-  enabled: "&3Enabled playing a song when joining"
-  playing: "&2Started Playing the Song: &a&l%song%&2. You can stop it using &a/jm stop"
+  prefix: '&7[&bJoinMusic&7]'
+  reload: '&3The reload was successful!'
+  stop: '&3Stopped playing the song! &7&oYou can disable playing a song on join with
+    &b&o/jm disable'
+  no-permission: '&cYou don''t have enough permissions'
+  disabled: '&3Disabled playing a song when joining. To enable it again, use &b/jm
+    enable'
+  enabled: '&3Enabled playing a song when joining'
+  playing: '&2Started Playing the Song: &a&l%song%&2. You can stop it using &a/jm
+    stop'
   help:
-    stop: "Stop playing the Song!"
-    disableOwn: "Disable playing a song when joining"
-    enableOwn: "Enable playing a song when joining"
+    stop: Stop playing the Song!
+    disableOwn: Disable playing a song when joining
+    enableOwn: Enable playing a song when joining
+  skip: '&3Skipped to next random song'
 ```
 
 ## Tab Completion
