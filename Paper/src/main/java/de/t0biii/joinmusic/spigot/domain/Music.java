@@ -24,7 +24,7 @@ public class Music {
 
   public static HashMap<UUID, SongPlayer> playingSong = new HashMap<>();
 
-  private static HashMap<String, Song> cachedSongs = new HashMap<>();
+  public static HashMap<String, Song> cachedSongs = new HashMap<>();
 
   public static void preloadSongs(Main plugin) {
     cachedSongs.clear();

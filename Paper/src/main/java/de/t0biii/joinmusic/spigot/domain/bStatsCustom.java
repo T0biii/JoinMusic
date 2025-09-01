@@ -1,5 +1,6 @@
 package de.t0biii.joinmusic.spigot.domain;
 
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 import de.t0biii.joinmusic.spigot.main.Main;
@@ -25,6 +26,7 @@ public class bStatsCustom {
         String bungeemode = plugin.getConfig().getString("options.bungeecord");
         String noteblockAPIVersion = plugin.noteblockAPIVersion;
         String placeholderAPIVersion = plugin.placeholderAPIVersion;
+        int songs = Music.cachedSongs.size();
 
         bstats.addCustomChart(new SimplePie("options_music_random", new Callable<String>() {
             @Override
@@ -69,10 +71,7 @@ public class bStatsCustom {
         bstats.addCustomChart(new SimplePie("options_delaySong", new Callable<String>() {
             @Override
             public String call()  {
-                if (delaySong != null) {
-                    return delaySong;
-                }
-                return "unknow";
+                return Objects.requireNonNullElse(delaySong, "unknow");
             }
         }));
 
@@ -135,6 +134,17 @@ public class bStatsCustom {
                 return "unknow";
             }
         }));
+
+        bstats.addCustomChart(new SimplePie("cachedSongs", new Callable<String>() {
+            @Override
+            public String call()  {
+                if (songs != 0)  {
+                    return String.valueOf(songs);
+                }
+                return "unknow";
+            }
+        }));
+
 
     }
 }
