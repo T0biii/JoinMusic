@@ -9,13 +9,13 @@ import org.bstats.bungeecord.Metrics;
 public final class JoinMusicBungee extends Plugin  {
 
     public ConfigManager cm = new ConfigManager(this);
-    public Integer dealy = 3;
+    public Integer delay = 3;
 
     @Override
     public void onEnable() {
         getProxy().registerChannel( "JoinMusic" );
         getProxy().getPluginManager().registerListener(this, new PlayerJoin(this));
-        dealy = cm.getConfig().getInt("delay");
+        delay = cm.getConfig().getInt("delay");
 
         if(cm.getConfig().getBoolean("metrics")){
             Metrics metrics = new Metrics(this, 8760);

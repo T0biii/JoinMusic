@@ -24,7 +24,7 @@ public class PlayerJoin implements Listener {
             public void run() {
                 Utils.sendCustomData(plugin, event.getPlayer(), "Join", event.getPlayer().getName(), true);
             }
-        }, plugin.dealy, TimeUnit.SECONDS);
+        }, plugin.delay, TimeUnit.SECONDS);
 
     }
 
